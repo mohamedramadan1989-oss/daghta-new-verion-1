@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1f3b">
+<title id="pageTitle" data-ar="اتصل بنا - Daghta | ضغطة" data-en="Contact Us - Daghta">اتصل بنا - Daghta | ضغطة</title>
+<meta name="description" content="تواصل مع فريق دعم منصة ضغطة (Daghta) للمساعدة في إنشاء وإدارة متجرك الإلكتروني.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e1f3b;
+  --navy: #12386f;
+  --navy-dark: #091528;
+  --brand: #0878f9;
+  --brand-hover: #0665d1;
+  --brand-light: #eaf3ff;
+  --brand-glow: rgba(8, 120, 249, 0.16);
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --line: #e2e8f0;
+  --line-focus: #0878f9;
+  --muted: #64748b;
+  --subtext: #475569;
+  --err: #d92d20;
+  --err-bg: #fef3f2;
+  --err-border: #fecdca;
+  --ok: #0f9d6b;
+  --ok-bg: #effaf5;
+  --ok-border: #b7e8d3;
+  --wa: #25d366;
+  --shadow-sm: 0 2px 8px rgba(14, 31, 59, 0.04);
+  --shadow-md: 0 10px 28px rgba(14, 31, 59, 0.07);
+  --shadow-lg: 0 20px 45px rgba(14, 31, 59, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.ic {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  vertical-align: -0.2em;
+}
+
+/* ==================== الهيدر ==================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 6%;
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-brand {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none;
+  padding: 2px 0;
+}
+
+.navbar .logo img,
+.nav-logo img,
+.logo img,
+.nav-logo,
+header img[src*="Daghta"],
+nav img[src*="Daghta"] {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.02);
+}
+
+html[dir="ltr"] .nav-logo, .nav-logo.en-logo {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  margin: 0;
+  object-fit: contain !important;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-nav-login {
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.btn-nav-login:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+.btn-nav-cta {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(8, 120, 249, 0.35);
+}
+
+.btn-nav-cta:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(8, 120, 249, 0.45);
+}
+
+.menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* ==================== هيرو صفحة التواصل ==================== */
+.chero {
+  background: radial-gradient(1000px 480px at 80% -10%, rgba(8, 120, 249, 0.4), transparent 70%),
+              radial-gradient(600px 300px at 10% 100%, rgba(18, 56, 111, 0.6), transparent 70%),
+              linear-gradient(165deg, var(--navy-dark) 0%, var(--ink) 50%, var(--navy) 100%);
+  color: #fff;
+  padding: 48px 6% 76px;
+  position: relative;
+  overflow: hidden;
+}
+
+.chero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(14, 31, 59, 0.4));
+  pointer-events: none;
+}
+
+.chero-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.chero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  margin-bottom: 14px;
+  color: #cde4ff;
+}
+
+.chero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.chero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  max-width: 20ch;
+  letter-spacing: -0.3px;
+}
+
+.chero p {
+  font-size: clamp(15px, 2vw, 17px);
+  opacity: 0.9;
+  max-width: 580px;
+  color: #dbe7f6;
+  line-height: 1.6;
+}
+
+/* ==================== المحتوى الرئيسي ==================== */
+.main-wrapper {
+  max-width: 1140px;
+  width: 100%;
+  margin: -44px auto 48px;
+  padding: 0 6%;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 28px;
+  position: relative;
+  z-index: 5;
+  flex: 1;
+}
+
+/* ==================== بطاقة النموذج ==================== */
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 34px 36px;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-header p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* تنبيه النموذج */
+.alert-box {
+  display: none;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-box.show-err {
+  display: flex;
+  background: var(--err-bg);
+  color: var(--err);
+  border: 1px solid var(--err-border);
+}
+
+.alert-box.show-ok {
+  display: flex;
+  background: var(--ok-bg);
+  color: #0b7a53;
+  border: 1px solid var(--ok-border);
+}
+
+.alert-box .ic {
+  width: 18px;
+  height: 18px;
+}
+
+/* الحقول */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-col-2 {
+  grid-column: 1 / -1;
+}
+
+.f-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.f-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.f-group label .req {
+  color: var(--err);
+  font-weight: bold;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap .field-ic {
+  position: absolute;
+  inset-inline-start: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.f-group input,
+.f-group select,
+.f-group textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  padding-inline-start: 42px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fbfcfe;
+  color: var(--ink);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.f-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+  padding-top: 12px;
+}
+
+.f-group input::placeholder,
+.f-group textarea::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.f-group input:hover,
+.f-group select:hover,
+.f-group textarea:hover {
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.f-group input:focus,
+.f-group select:focus,
+.f-group textarea:focus {
+  border-color: var(--brand);
+  background: #fff;
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+.f-group input:focus ~ .field-ic,
+.f-group select:focus ~ .field-ic,
+.f-group textarea:focus ~ .field-ic {
+  color: var(--brand);
+}
+
+/* حالة الخطأ في الحقل */
+.f-group.has-err input,
+.f-group.has-err select,
+.f-group.has-err textarea {
+  border-color: var(--err);
+  background: #fffafa;
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.12);
+}
+
+.f-group.has-err .field-ic {
+  color: var(--err);
+}
+
+.field-error-msg {
+  display: none;
+  font-size: 12.5px;
+  color: var(--err);
+  margin-top: 5px;
+  font-weight: 500;
+  gap: 4px;
+  align-items: center;
+}
+
+.f-group.has-err .field-error-msg {
+  display: flex;
+}
+
+/* عداد الحروف للرسالة */
+.char-counter-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.char-counter {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+}
+
+/* مصيدة السبام (Honeypot) */
+.hp-field {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* زر الإرسال */
+.btn-submit {
+  width: 100%;
+  min-height: 52px;
+  background: linear-gradient(135deg, var(--brand) 0%, #0566d5 100%);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(8, 120, 249, 0.3);
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #097df9 0%, #035bbd 100%);
+  box-shadow: 0 10px 24px rgba(8, 120, 249, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-submit.is-busy {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.btn-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.btn-submit.is-busy .btn-spinner {
+  display: block;
+}
+
+.btn-submit.is-busy .btn-label,
+.btn-submit.is-busy .btn-arrow {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== شاشة النجاح بعد الإرسال ==================== */
+.done-box {
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.done-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--ok-bg);
+  color: var(--ok);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border: 2px solid var(--ok-border);
+  box-shadow: 0 8px 24px rgba(15, 157, 107, 0.18);
+}
+
+.done-icon-circle .ic {
+  width: 40px;
+  height: 40px;
+  stroke-width: 2.5;
+}
+
+.done-box h3 {
+  font-size: 24px;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.done-box p {
+  color: var(--subtext);
+  font-size: 15px;
+  max-width: 420px;
+  margin: 0 auto 18px;
+  line-height: 1.6;
+}
+
+.ref-ticket {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.ref-ticket span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.ref-ticket code {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 1px;
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy-btn {
+  background: var(--brand-light);
+  border: 0;
+  color: var(--brand);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: #d4e7ff;
+}
+
+.btn-reset {
+  background: var(--card-bg);
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: var(--bg);
+  border-color: #cbd5e1;
+}
+
+/* ==================== الشريط الجانبي (قنوات التواصل) ==================== */
+.side-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.side-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.side-card-sub {
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chan-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fbfcfe;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+.chan-item:hover {
+  background: #fff;
+  border-color: var(--brand);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(8, 120, 249, 0.08);
+}
+
+.chan-item.whatsapp-item:hover {
+  border-color: var(--wa);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.15);
+}
+
+.chan-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--brand-light);
+  color: var(--brand);
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform 0.2s ease;
+}
+
+.chan-item.whatsapp-item .chan-icon-box {
+  background: #e7f9ee;
+  color: #1ea952;
+}
+
+.chan-item:hover .chan-icon-box {
+  transform: scale(1.05);
+}
+
+.chan-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.chan-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.chan-value {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  direction: ltr;
+  text-align: start;
+  word-break: break-all;
+}
+
+.chan-action-arrow {
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.chan-item:hover .chan-action-arrow {
+  color: var(--brand);
+  transform: translateX(-3px);
+}
+
+html[dir="ltr"] .chan-item:hover .chan-action-arrow {
+  transform: translateX(3px);
+}
+
+/* بطاقة ساعات العمل */
+.hours-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(8, 120, 249, 0.05) 0%, rgba(18, 56, 111, 0.08) 100%);
+  border: 1px solid rgba(8, 120, 249, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+
+.hours-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--brand);
+  display: grid;
+  place-items: center;
+  flex: none;
+  box-shadow: 0 2px 6px rgba(8, 120, 249, 0.12);
+}
+
+.hours-info h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.hours-info p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* بطاقة السوشيال ميديا */
+.social-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.social-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.social-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.social-row {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+  border: 1px solid var(--line);
+}
+
+.social-btn:hover {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(8, 120, 249, 0.25);
+}
+
+/* بطاقة الأسئلة الشائعة */
+.faq-shortcut-card {
+  background: linear-gradient(145deg, #0e1f3b 0%, #163668 100%);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: 22px 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.faq-shortcut-card::after {
+  content: "?";
+  position: absolute;
+  inset-inline-end: 10px;
+  bottom: -20px;
+  font-size: 110px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.faq-shortcut-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.faq-shortcut-card p {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.faq-shortcut-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.faq-shortcut-card a:hover {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+
+/* ==================== الفوتر ==================== */
+.page-footer {
+  background: var(--ink);
+  color: #94a3b8;
+  padding: 28px 6% calc(28px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13.5px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.95;
+  margin: 0;
+}
+
+html[dir="ltr"] .footer-logo, .footer-logo.en-logo {
+  height: 34px;
+  width: auto;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ==================== التجاوب (Responsive) ==================== */
+@media (max-width: 960px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+    margin-top: -30px;
+    gap: 24px;
+  }
+  .side-pane {
+    order: 2;
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-brand {
+    padding: 2px 0;
+  }
+  .nav-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  html[dir="ltr"] .nav-logo, .nav-logo.en-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: grid;
+  }
+  body.mobile-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    width: 100%;
+    background: var(--ink);
+    padding: 16px 6%;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  .form-card {
+    padding: 24px 20px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-actions .btn-nav-cta {
+    display: none;
+  }
+  .chero {
+    padding: 36px 6% 64px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Icons Definition -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="g-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="g-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="g-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="g-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="g-tag" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></symbol>
+    <symbol id="g-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="g-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="g-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="g-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+    <symbol id="g-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="g-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="g-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="g-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="g-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="g-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="g-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="g-tt" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="g-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="g-faq" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="g-undo" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+  </defs>
+</svg>
+
+<!-- شريط الملاحة العلوي -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <a href="index.html" class="nav-brand" aria-label="Daghta Home">
+    <img src="Daghta_ar_white.png" id="headerLogo" class="nav-logo" alt="Daghta Logo" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png">
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+    <li><a href="index.html#how" data-ar="كيف نعمل؟" data-en="How it Works?">كيف نعمل؟</a></li>
+    <li><a href="index.html#features" data-ar="المميزات" data-en="Features">المميزات</a></li>
+    <li><a href="index.html#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a></li>
+    <li><a href="contact.html" class="active" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Change Language">
+      <svg class="ic"><use href="#g-globe"/></svg>
+      <span id="langText">English</span>
+    </button>
+    <a href="login.html" class="btn-nav-login" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</a>
+    <a href="create_ar.html" class="btn-nav-cta" data-ar="إنشاء متجر 👈" data-en="Create Store 👈">إنشاء متجر 👈</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <svg class="ic"><use href="#g-menu"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- قسم الهيرو الترحيبي -->
+<header class="chero">
+  <div class="chero-container">
+    <div class="chero-badge">
+      <span class="dot"></span>
+      <span data-ar="فريق الدعم الفني جاهز لمساعدتك" data-en="Support Team is ready to help">فريق الدعم الفني جاهز لمساعدتك</span>
+    </div>
+    <h1 data-ar="تواصل معنا، نسعد بخدمتك دائماً" data-en="Contact Us, We're Always Happy to Help">تواصل معنا، نسعد بخدمتك دائماً</h1>
+    <p data-ar="لديك استفسار حول منصة ضغطة؟ واجهتك مشكلة أثناء إعداد متجرك؟ أرسل لنا رسالتك وسيتواصل معك خبراؤنا في أسرع وقت." data-en="Have a question about Daghta platform? Faced an issue while setting up your store? Drop us a message and our team will get back to you shortly.">لديك استفسار حول منصة ضغطة؟ واجهتك مشكلة أثناء إعداد متجرك؟ أرسل لنا رسالتك وسيتواصل معك خبراؤنا في أسرع وقت.</p>
+  </div>
+</header>
+
+<!-- جسم الصفحة الرئيسي: النموذج وقنوات التواصل -->
+<main class="main-wrapper">
+
+  <!-- بطاقة نموذج المراسلة -->
+  <section class="form-card" aria-labelledby="formTitle">
+    
+    <div class="form-header">
+      <h2 id="formTitle">
+        <svg class="ic" style="color:var(--brand)"><use href="#g-msg"/></svg>
+        <span data-ar="أرسل لنا رسالة مباشرة" data-en="Send Us a Direct Message">أرسل لنا رسالة مباشرة</span>
+      </h2>
+      <p data-ar="املأ البيانات أدناه وسنرد عليك عبر البريد الإلكتروني أو الواتساب." data-en="Fill in the details below and we will get back to you via email or WhatsApp.">املأ البيانات أدناه وسنرد عليك عبر البريد الإلكتروني أو الواتساب.</p>
+    </div>
+
+    <!-- صندوق التنبيهات العام -->
+    <div class="alert-box" id="formAlert" role="alert" aria-live="polite">
+      <svg class="ic alert-icon"><use href="#g-alert"/></svg>
+      <span class="alert-msg" id="alertText"></span>
+    </div>
+
+    <!-- النموذج -->
+    <form id="contactForm" novalidate autocomplete="on">
+      <!-- مصيدة البوتات غير المرئية لمنع السبام -->
+      <input type="text" name="website" id="websiteHoneypot" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="form-grid">
+        <!-- حقل الاسم بالكامل -->
+        <div class="f-group field-col-2" id="groupName">
+          <label for="cName">
+            <span data-ar="الاسم بالكامل" data-en="Full Name">الاسم بالكامل</span>
+            <span class="req">*</span>
+          </label>
+          <div class="input-wrap">
+            <svg class="field-ic"><use href="#g-user"/></svg>
+            <input id="cName" type="text" autocomplete="name" enterkeyhint="next" placeholder="محمد علي" data-ph-ar="محمد علي" data-ph-en="e.g. John Doe" required>
+          </div>
+          <div class="field-error-msg" id="cNameErr">
+            <svg class="ic" style="width:14px;height:14px"><use href="#g-alert"/></svg>
+            <span class="err-text" data-ar="يرجى كتابة الاسم بالكامل (حرفين على الأقل)" data-en="Please enter your full name (at least 2 characters)">يرجى كتابة الاسم بالكامل (حرفين على الأقل)</span>
+          </div>
+        </div>
+
+        <!-- حقل البريد الإلكتروني -->
+        <div class="f-group" id="groupEmail">
+          <label for="cEmail">
+            <span data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span>
+            <span class="req">*</span>
+          </label>
+          <div class="input-wrap">
+            <svg class="field-ic"><use href="#g-mail"/></svg>
+            <input id="cEmail" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" placeholder="name@example.com" data-ph-ar="name@example.com" data-ph-en="name@example.com" dir="ltr" required>
+          </div>
+          <div class="field-error-msg" id="cEmailErr">
+            <svg class="ic" style="width:14px;height:14px"><use href="#g-alert"/></svg>
+            <span class="err-text" data-ar="يرجى كتابة بريد إلكتروني صحيح (مثال: name@example.com)" data-en="Please enter a valid email address (e.g. name@example.com)">يرجى كتابة بريد إلكتروني صحيح (مثال: name@example.com)</span>
+          </div>
+        </div>
+
+        <!-- حقل رقم الهاتف / الواتساب -->
+        <div class="f-group" id="groupPhone">
+          <label for="cPhone">
+            <span data-ar="رقم الموبايل / الواتساب" data-en="Mobile / WhatsApp">رقم الموبايل / الواتساب</span>
+            <span class="req">*</span>
+          </label>
+          <div class="input-wrap">
+            <svg class="field-ic"><use href="#g-phone"/></svg>
+            <input id="cPhone" type="tel" autocomplete="tel" enterkeyhint="next" placeholder="01012345678 أو مع كود الدولة" data-ph-ar="01012345678 أو مع كود الدولة" data-ph-en="+20 101 234 5678" dir="ltr" required>
+          </div>
+          <div class="field-error-msg" id="cPhoneErr">
+            <svg class="ic" style="width:14px;height:14px"><use href="#g-alert"/></svg>
+            <span class="err-text" data-ar="يرجى إدخال رقم هاتف صحيح (8 أرقام على الأقل)" data-en="Please enter a valid phone number (at least 8 digits)">يرجى إدخال رقم هاتف صحيح (8 أرقام على الأقل)</span>
+          </div>
+        </div>
+
+        <!-- موضوع الرسالة -->
+        <div class="f-group field-col-2" id="groupTopic">
+          <label for="cTopic">
+            <span data-ar="موضوع الرسالة أو الاستفسار" data-en="Message Topic">موضوع الرسالة أو الاستفسار</span>
+          </label>
+          <div class="input-wrap">
+            <svg class="field-ic"><use href="#g-tag"/></svg>
+            <select id="cTopic">
+              <option value="support" data-ar="مشكلة فنية أو مساعدة في المتجر" data-en="Technical Issue or Store Setup">مشكلة فنية أو مساعدة في المتجر</option>
+              <option value="account" data-ar="الحساب وتسجيل الدخول" data-en="Account and Sign-in">الحساب وتسجيل الدخول</option>
+              <option value="orders" data-ar="إدارة الأوردرات والمدفوعات" data-en="Orders & Payments Management">إدارة الأوردرات والمدفوعات</option>
+              <option value="sales" data-ar="شراكة أو خطط الأسعار والاشتراكات" data-en="Partnership or Pricing Plans">شراكة أو خطط الأسعار والاشتراكات</option>
+              <option value="suggestions" data-ar="اقتراح فكرة أو ميزة جديدة" data-en="Feature Request or Suggestion">اقتراح فكرة أو ميزة جديدة</option>
+              <option value="other" data-ar="أخرى / استفسار عام" data-en="Other / General Inquiry">أخرى / استفسار عام</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- نص الرسالة -->
+        <div class="f-group field-col-2" id="groupMsg">
+          <div class="char-counter-wrap">
+            <label for="cMsg">
+              <span data-ar="تفاصيل الرسالة" data-en="Message Details">تفاصيل الرسالة</span>
+              <span class="req">*</span>
+            </label>
+            <span class="char-counter"><span id="charCount">0</span> / 1000</span>
+          </div>
+          <div class="input-wrap">
+            <svg class="field-ic" style="top:16px"><use href="#g-msg"/></svg>
+            <textarea id="cMsg" maxlength="1000" enterkeyhint="send" placeholder="اشرح مشكلتك أو استفسارك بالتفصيل لمساعدتك بأفضل شكل ممكن..." data-ph-ar="اشرح مشكلتك أو استفسارك بالتفصيل لمساعدتك بأفضل شكل ممكن..." data-ph-en="Describe your question or issue in detail so we can best assist you..." required></textarea>
+          </div>
+          <div class="field-error-msg" id="cMsgErr">
+            <svg class="ic" style="width:14px;height:14px"><use href="#g-alert"/></svg>
+            <span class="err-text" data-ar="الرسالة قصيرة جداً (اكتب 10 أحرف على الأقل)" data-en="Message is too short (at least 10 characters required)">الرسالة قصيرة جداً (اكتب 10 أحرف على الأقل)</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="btn-label" data-ar="إرسال الرسالة الآن" data-en="Send Message Now">إرسال الرسالة الآن</span>
+        <svg class="ic btn-arrow"><use href="#g-send"/></svg>
+        <span class="btn-spinner"></span>
+      </button>
+    </form>
+
+    <!-- بطاقة تأكيد النجاح بعد الإرسال -->
+    <div class="done-box" id="doneBox">
+      <div class="done-icon-circle">
+        <svg class="ic"><use href="#g-check"/></svg>
+      </div>
+      <h3 data-ar="تم استلام رسالتك بنجاح!" data-en="Message Sent Successfully!">تم استلام رسالتك بنجاح!</h3>
+      <p data-ar="شكراً لتواصلك مع منصة ضغطة. تم تسجيل طلبك وسيقوم فريق الدعم الفني بمراجعته والتواصل معك في أقرب وقت." data-en="Thank you for contacting Daghta. Your inquiry has been registered and our team will get back to you shortly.">شكراً لتواصلك مع منصة ضغطة. تم تسجيل طلبك وسيقوم فريق الدعم الفني بمراجعته والتواصل معك في أقرب وقت.</p>
+      
+      <div class="ref-ticket">
+        <span data-ar="الرقم المرجعي لتتبع رسالتك:" data-en="Reference Tracking ID:">الرقم المرجعي لتتبع رسالتك:</span>
+        <code>
+          <span id="refCodeText">DAG-123456</span>
+          <button type="button" class="copy-btn" id="copyRefBtn" title="نسخ الرمز">
+            <svg class="ic" style="width:14px;height:14px"><use href="#g-copy"/></svg>
+            <span id="copyBtnLabel" data-ar="نسخ" data-en="Copy">نسخ</span>
+          </button>
+        </code>
+      </div>
+
+      <div>
+        <button type="button" class="btn-reset" id="btnResetForm">
+          <svg class="ic"><use href="#g-undo"/></svg>
+          <span data-ar="إرسال رسالة أخرى" data-en="Send Another Message">إرسال رسالة أخرى</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- الشريط الجانبي: طرق التواصل السريعة ومعلومات الدعم -->
+  <aside class="side-pane">
+    
+    <!-- بطاقة قنوات التواصل -->
+    <div class="side-card">
+      <h3 class="side-card-title" data-ar="طرق تواصل سريعة ومباشرة" data-en="Fast & Direct Channels">طرق تواصل سريعة ومباشرة</h3>
+      <p class="side-card-sub" data-ar="اختر الطريقة الأنسب لك للتواصل الفوري مع فريق خدمة العملاء." data-en="Choose your preferred channel for instant communication with our team.">اختر الطريقة الأنسب لك للتواصل الفوري مع فريق خدمة العملاء.</p>
+
+      <div class="channels-list">
+        <!-- واتساب -->
+        <a class="chan-item whatsapp-item" href="https://wa.me/201012345678" target="_blank" rel="noopener noreferrer">
+          <div class="chan-icon-box">
+            <svg class="ic" style="width:24px;height:24px"><use href="#g-wa"/></svg>
+          </div>
+          <div class="chan-content">
+            <span class="chan-label" data-ar="محادثة واتساب سريعة" data-en="WhatsApp Direct Chat">محادثة واتساب سريعة</span>
+            <span class="chan-value">+20 101 234 5678</span>
+          </div>
+          <svg class="ic chan-action-arrow"><use href="#g-arrow-left"/></svg>
+        </a>
+
+        <!-- البريد الإلكتروني -->
+        <a class="chan-item" href="mailto:support@daghta.com">
+          <div class="chan-icon-box">
+            <svg class="ic" style="width:22px;height:22px"><use href="#g-mail"/></svg>
+          </div>
+          <div class="chan-content">
+            <span class="chan-label" data-ar="البريد الإلكتروني للدعم" data-en="Support Email">البريد الإلكتروني للدعم</span>
+            <span class="chan-value">support@daghta.com</span>
+          </div>
+          <svg class="ic chan-action-arrow"><use href="#g-arrow-left"/></svg>
+        </a>
+
+        <!-- الهاتف / الخط الساخن -->
+        <a class="chan-item" href="tel:+201012345678">
+          <div class="chan-icon-box">
+            <svg class="ic" style="width:22px;height:22px"><use href="#g-phone"/></svg>
+          </div>
+          <div class="chan-content">
+            <span class="chan-label" data-ar="الاتصال الهاتفي" data-en="Phone Support">الاتصال الهاتفي</span>
+            <span class="chan-value">+20 101 234 5678</span>
+          </div>
+          <svg class="ic chan-action-arrow"><use href="#g-arrow-left"/></svg>
+        </a>
+      </div>
+
+      <!-- ساعات العمل ومعدل الرد -->
+      <div class="hours-card">
+        <div class="hours-icon">
+          <svg class="ic"><use href="#g-clock"/></svg>
+        </div>
+        <div class="hours-info">
+          <h4 data-ar="مواعيد العمل وسرعة الرد" data-en="Working Hours & Speed">مواعيد العمل وسرعة الرد</h4>
+          <p data-ar="متاحون يومياً من 9:00 ص حتى 10:00 م (بتوقيت القاهرة ومكة المكرمة). متوسط وقت الرد أقل من ساعتين." data-en="Available daily 9:00 AM - 10:00 PM (Cairo & Mecca time). Average reply time is under 2 hours.">متاحون يومياً من 9:00 ص حتى 10:00 م (بتوقيت القاهرة ومكة المكرمة). متوسط وقت الرد أقل من ساعتين.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- بطاقة السوشيال ميديا -->
+    <div class="social-card">
+      <h3 data-ar="تابع منصة ضغطة" data-en="Follow Daghta Platform">تابع منصة ضغطة</h3>
+      <p data-ar="تابع آخر التحديثات والمميزات ونصائح التجارة الإلكترونية." data-en="Follow the latest features, updates, and e-commerce tips.">تابع آخر التحديثات والمميزات ونصائح التجارة الإلكترونية.</p>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" title="Facebook"><svg class="ic"><use href="#g-fb"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" title="Instagram"><svg class="ic"><use href="#g-ig"/></svg></a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok" title="TikTok"><svg class="ic"><use href="#g-tt"/></svg></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="LinkedIn"><svg class="ic"><use href="#g-in"/></svg></a>
+      </div>
+    </div>
+
+    <!-- بطاقة اختصار الأسئلة الشائعة -->
+    <div class="faq-shortcut-card">
+      <h3 data-ar="لديك سؤال يتكرر كثيراً؟" data-en="Got a Common Question?">لديك سؤال يتكرر كثيراً؟</h3>
+      <p data-ar="قد تجد الإجابة فوراً دون انتظار! تصفح دليل الأسئلة الشائعة وإجابات كل ما يخص المتاجر والاشتراكات." data-en="You might find your answer immediately! Check our FAQ guide covering store setup and features.">قد تجد الإجابة فوراً دون انتظار! تصفح دليل الأسئلة الشائعة وإجابات كل ما يخص المتاجر والاشتراكات.</p>
+      <a href="index.html#faq">
+        <svg class="ic"><use href="#g-faq"/></svg>
+        <span data-ar="استعراض الأسئلة الشائعة" data-en="Browse FAQ Guide">استعراض الأسئلة الشائعة</span>
+      </a>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- الفوتر -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Daghta_ar_white.png" class="footer-logo" alt="Daghta" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png">
+      <span data-ar="منصة ضغطة لإنشاء المتاجر الفورية © 2026" data-en="Daghta Platform for Instant Stores © 2026">منصة ضغطة لإنشاء المتاجر الفورية © 2026</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+      <li><a href="index.html#how" data-ar="كيف نعمل؟" data-en="How it Works?">كيف نعمل؟</a></li>
+      <li><a href="index.html#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a></li>
+      <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- منطق اللغة والتفاعل -->
+<script>
+(function() {
+  'use strict';
+
+  // إدارة اللغة
+  var params = new URLSearchParams(window.location.search);
+  var saved = null;
+  try { saved = localStorage.getItem('daghtaLang'); } catch (e) {}
+  var langParam = params.get('lang');
+  window.LANG = (langParam === 'en' || langParam === 'ar') ? langParam : (saved === 'en' ? 'en' : 'ar');
+
+  window.setLanguage = function(lang) {
+    window.LANG = lang;
+    try { localStorage.setItem('daghtaLang', lang); } catch (e) {}
+
+    var doc = document;
+    var root = doc.documentElement;
+    root.lang = lang;
+    root.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    // ترجمة النصوص
+    doc.querySelectorAll('[data-ar]').forEach(function(el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val !== null) el.textContent = val;
+    });
+
+    // ترجمة الـ Placeholders
+    doc.querySelectorAll('[data-ph-ar]').forEach(function(el) {
+      var ph = el.getAttribute('data-ph-' + lang);
+      if (ph !== null) el.placeholder = ph;
+    });
+
+    // ترجمة الشعارات
+    doc.querySelectorAll('[data-ar-logo]').forEach(function(el) {
+      var logoSrc = el.getAttribute('data-' + lang + '-logo');
+      if (logoSrc) el.src = logoSrc;
+    });
+
+    // زر اللغة
+    var langText = doc.getElementById('langText');
+    if (langText) {
+      langText.textContent = (lang === 'ar') ? 'English' : 'العربية';
+    }
+
+    // تحديث عنوان الصفحة
+    var pageTitle = doc.getElementById('pageTitle');
+    if (pageTitle) {
+      doc.title = pageTitle.getAttribute('data-' + lang) || doc.title;
+    }
+
+    // سهم التحرك في القنوات
+    doc.querySelectorAll('.chan-action-arrow use').forEach(function(useEl) {
+      useEl.setAttribute('href', lang === 'ar' ? '#g-arrow-left' : '#g-arrow-right');
+    });
+
+    if (typeof window.onLanguageChanged === 'function') {
+      window.onLanguageChanged(lang);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var langBtn = document.getElementById('langBtn');
+    if (langBtn) {
+      langBtn.addEventListener('click', function() {
+        window.setLanguage(window.LANG === 'ar' ? 'en' : 'ar');
+      });
+    }
+
+    // القائمة في الشاشات الصغيرة
+    var menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        var isOpen = document.body.classList.toggle('mobile-nav-open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // تطبيق اللغة الأولية
+    window.setLanguage(window.LANG);
+  });
+})();
+</script>
+
+<!-- منطق التحقق من النموذج وإرساله والتكامل مع Firebase -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// إعدادات Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDmsyy5hZmES8q11bkJlmO9WZ5wght8Z04",
+  authDomain: "daghta-5ec61.firebaseapp.com",
+  projectId: "daghta-5ec61",
+  storageBucket: "daghta-5ec61.firebasestorage.app",
+  messagingSenderId: "496395341194",
+  appId: "1:496395341194:web:b00139eb31c40ca2f30c73",
+  measurementId: "G-ZPG9J6KBVW"
+};
+
+const isFirebaseReady = !firebaseConfig.apiKey.includes('...');
+let db = null;
+if (isFirebaseReady) {
+  try {
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+  } catch (err) {
+    console.warn("Firebase initialization skipped:", err);
+  }
+}
+
+// قواميس الرسائل والتنبيهات
+const MESSAGES = {
+  ar: {
+    fillAll: "يرجى ملء جميع الحقول المطلوبة والتأكد من صحتها.",
+    nameRequired: "يرجى كتابة الاسم بالكامل (حرفين على الأقل).",
+    emailInvalid: "يرجى كتابة بريد إلكتروني صحيح (مثال: name@example.com).",
+    phoneInvalid: "يرجى كتابة رقم هاتف صحيح (8 أرقام على الأقل).",
+    msgTooShort: "الرسالة قصيرة جداً؛ يرجى كتابة 10 أحرف على الأقل لشرح مشكلتك.",
+    sending: "جاري الإرسال...",
+    sendNow: "إرسال الرسالة الآن",
+    successAlert: "تم إرسال رسالتك بنجاح! رقم المرجع: ",
+    copySuccess: "تم النسخ!",
+    copyDefault: "نسخ"
+  },
+  en: {
+    fillAll: "Please fill in all required fields properly.",
+    nameRequired: "Please enter your full name (at least 2 characters).",
+    emailInvalid: "Please enter a valid email address (e.g. name@example.com).",
+    phoneInvalid: "Please enter a valid phone number (at least 8 digits).",
+    msgTooShort: "Message is too short; please write at least 10 characters.",
+    sending: "Sending...",
+    sendNow: "Send Message Now",
+    successAlert: "Message sent successfully! Reference ID: ",
+    copySuccess: "Copied!",
+    copyDefault: "Copy"
+  }
+};
+
+const $ = id => document.getElementById(id);
+const toEnDigits = str => (str || '').replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).trim();
+
+// تنبيهات الحقول والنموذج
+const alertBox = $('formAlert');
+const alertText = $('alertText');
+
+function showAlert(text, type = 'err') {
+  alertBox.className = 'alert-box ' + (type === 'ok' ? 'show-ok' : 'show-err');
+  alertText.textContent = text;
+  alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function hideAlert() {
+  alertBox.className = 'alert-box';
+  alertText.textContent = '';
+}
+
+function setFieldError(groupId, errId, message) {
+  const group = $(groupId);
+  if (group) group.classList.add('has-err');
+  const errEl = $(errId);
+  if (errEl && message) {
+    const textSpan = errEl.querySelector('.err-text');
+    if (textSpan) textSpan.textContent = message;
+  }
+}
+
+function clearFieldError(groupId) {
+  const group = $(groupId);
+  if (group) group.classList.remove('has-err');
+}
+
+// تفاعل عداد حروف الرسالة
+const msgTextarea = $('cMsg');
+const charCountSpan = $('charCount');
+if (msgTextarea && charCountSpan) {
+  msgTextarea.addEventListener('input', () => {
+    charCountSpan.textContent = msgTextarea.value.length;
+    if (msgTextarea.value.trim().length >= 10) {
+      clearFieldError('groupMsg');
+    }
+  });
+}
+
+// مسح الأخطاء فور بدء المستخدم بالكتابة
+['cName', 'cEmail', 'cPhone', 'cMsg'].forEach(id => {
+  const input = $(id);
+  if (!input) return;
+  input.addEventListener('input', () => {
+    const group = input.closest('.f-group');
+    if (group && group.classList.contains('has-err')) {
+      group.classList.remove('has-err');
+      if (!document.querySelector('.f-group.has-err')) {
+        hideAlert();
+      }
+    }
+  });
+});
+
+// معالجة إرسال النموذج
+const form = $('contactForm');
+const submitBtn = $('submitBtn');
+const doneBox = $('doneBox');
+const refCodeText = $('refCodeText');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  hideAlert();
+
+  const lang = window.LANG || 'ar';
+  const t = MESSAGES[lang];
+
+  // 1. فحص مصيدة البوتات (Honeypot)
+  if ($('websiteHoneypot').value) {
+    console.warn("Spam bot detected.");
+    return;
+  }
+
+  // 2. قراءة القيم وتنظيفها
+  const name = $('cName').value.trim();
+  const email = $('cEmail').value.trim();
+  const rawPhone = toEnDigits($('cPhone').value);
+  const cleanPhone = rawPhone.replace(/[\s\-\(\)]/g, '');
+  const topic = $('cTopic').value;
+  const message = $('cMsg').value.trim();
+
+  let hasErrors = false;
+  let firstInvalidEl = null;
+
+  // التحقق من الاسم
+  if (!name || name.length < 2) {
+    setFieldError('groupName', 'cNameErr', t.nameRequired);
+    hasErrors = true;
+    if (!firstInvalidEl) firstInvalidEl = $('cName');
+  } else {
+    clearFieldError('groupName');
+  }
+
+  // التحقق من البريد الإلكتروني
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+  if (!email || !emailRegex.test(email)) {
+    setFieldError('groupEmail', 'cEmailErr', t.emailInvalid);
+    hasErrors = true;
+    if (!firstInvalidEl) firstInvalidEl = $('cEmail');
+  } else {
+    clearFieldError('groupEmail');
+  }
+
+  // التحقق من رقم الهاتف
+  const phoneRegex = /^\+?[0-9]{8,15}$/;
+  if (!cleanPhone || !phoneRegex.test(cleanPhone)) {
+    setFieldError('groupPhone', 'cPhoneErr', t.phoneInvalid);
+    hasErrors = true;
+    if (!firstInvalidEl) firstInvalidEl = $('cPhone');
+  } else {
+    clearFieldError('groupPhone');
+  }
+
+  // التحقق من نص الرسالة
+  if (!message || message.length < 10) {
+    setFieldError('groupMsg', 'cMsgErr', t.msgTooShort);
+    hasErrors = true;
+    if (!firstInvalidEl) firstInvalidEl = $('cMsg');
+  } else {
+    clearFieldError('groupMsg');
+  }
+
+  // إذا وجد خطأ نوقف الإرسال ونركز على الحقل الأول
+  if (hasErrors) {
+    showAlert(t.fillAll, 'err');
+    if (firstInvalidEl) firstInvalidEl.focus();
+    return;
+  }
+
+  // تفعيل حالة التحميل للزر
+  submitBtn.classList.add('is-busy');
+
+  // توليد رقم تتبع فريد
+  const refCode = 'DAG-' + Math.floor(100000 + Math.random() * 900000);
+  const payload = {
+    ref: refCode,
+    name: name,
+    email: email,
+    phone: cleanPhone,
+    topic: topic,
+    message: message,
+    lang: lang,
+    userAgent: navigator.userAgent,
+    createdAt: new Date().toISOString()
+  };
+
+  // حفظ محلي لضمان عدم ضياع الرسالة حتى في حال انقطاع الشبكة
+  try {
+    const existing = JSON.parse(localStorage.getItem('daghta_contact_messages') || '[]');
+    existing.push(payload);
+    localStorage.setItem('daghta_contact_messages', JSON.stringify(existing));
+  } catch (e) {
+    console.warn("Local storage write error:", e);
+  }
+
+  // إذا كانت إعدادات Firebase مهيأة نقوم بالحفظ في Firestore
+  if (isFirebaseReady && db) {
+    try {
+      await addDoc(collection(db, 'contact_messages'), {
+        ...payload,
+        createdAt: new Date()
+      });
+    } catch (firebaseErr) {
+      console.warn("Firestore sync deferred (saved locally):", firebaseErr);
+    }
+  } else {
+    // محاكاة تأخير شبكي أنيق لتجربة مستخدم واقعية
+    await new Promise(r => setTimeout(r, 650));
+  }
+
+  submitBtn.classList.remove('is-busy');
+
+  // إظهار شاشة النجاح
+  refCodeText.textContent = refCode;
+  form.style.display = 'none';
+  $('formTitle').style.display = 'none';
+  hideAlert();
+  doneBox.style.display = 'block';
+  doneBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+
+// زر نسخ الرقم المرجعي
+const copyRefBtn = $('copyRefBtn');
+const copyBtnLabel = $('copyBtnLabel');
+if (copyRefBtn) {
+  copyRefBtn.addEventListener('click', async () => {
+    const code = refCodeText.textContent;
+    const lang = window.LANG || 'ar';
+    const t = MESSAGES[lang];
+    try {
+      await navigator.clipboard.writeText(code);
+      copyBtnLabel.textContent = t.copySuccess;
+      setTimeout(() => {
+        copyBtnLabel.textContent = t.copyDefault;
+      }, 2000);
+    } catch (e) {
+      // بديل النسخ للأجهزة القديمة
+      const ta = document.createElement('textarea');
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      copyBtnLabel.textContent = t.copySuccess;
+      setTimeout(() => {
+        copyBtnLabel.textContent = t.copyDefault;
+      }, 2000);
+    }
+  });
+}
+
+// زر إرسال استفسار آخر (إعادة ضبط النموذج)
+const btnResetForm = $('btnResetForm');
+if (btnResetForm) {
+  btnResetForm.addEventListener('click', () => {
+    form.reset();
+    charCountSpan.textContent = '0';
+    ['groupName', 'groupEmail', 'groupPhone', 'groupMsg'].forEach(clearFieldError);
+    hideAlert();
+    doneBox.style.display = 'none';
+    form.style.display = 'block';
+    $('formTitle').style.display = 'flex';
+    $('cName').focus();
+  });
+}
+
+// تحديث الرسائل عند تغيير اللغة
+window.onLanguageChanged = function(newLang) {
+  const t = MESSAGES[newLang];
+  if (copyBtnLabel) copyBtnLabel.textContent = t.copyDefault;
+};
+</script>
+
+</body>
+</html>

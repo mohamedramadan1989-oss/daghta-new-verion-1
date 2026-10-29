@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e1f3b">
+<meta name="description" content="أنشئ متجرك الإلكتروني في أقل من دقيقة، ونظّم أوردراتك وحساباتك وتابع أرباحك في مكان واحد. ابدأ مجاناً مع Daghta.">
+<meta property="og:title" content="Daghta - المنصة الأولى لإنشاء المتاجر الفورية">
+<meta property="og:description" content="أنشئ متجرك في أقل من دقيقة وانشر رابطه على السوشيال ميديا.">
+<meta property="og:image" content="Daghta_ar_white.png">
+<title id="pageTitle" data-ar="Daghta - المنصة الأولى لإنشاء المتاجر الفورية" data-en="Daghta - #1 Instant Store Creator Platform">Daghta - المنصة الأولى لإنشاء المتاجر الفورية</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e1f3b;--navy:#12386f;--brand:#0878f9;--soft:#e6f1ff;--bg:#f5f7fb;--line:#e1e6ef;--muted:#5f6c82}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.ic{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
+.skip{position:absolute;top:-60px;inset-inline-start:10px;background:#fff;padding:8px 14px;border-radius:8px;z-index:999}
+.skip:focus{top:10px}
+
+/* الهيدر */
+.navbar{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;display:flex;align-items:center;gap:18px;padding:10px 5%;flex-wrap:wrap}
+.nav-brand-box{display:flex !important;align-items:center !important;text-decoration:none;margin-inline-end:auto;padding:2px 0;overflow:visible;height:auto !important;max-height:none}
+.navbar .logo img,
+.nav-logo img,
+.logo img,
+.exact-logo-img,
+.nav-logo,
+header img[src*="Daghta"],
+nav img[src*="Daghta"],
+.nav-brand-box img {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+html[dir="ltr"] .exact-logo-img, .exact-logo-img.en-logo{height:32px !important;max-height:32px !important;width:auto !important;max-width:140px !important;margin:0}
+.nav-links{display:flex;list-style:none;gap:26px}
+.nav-links a{text-decoration:none;font-size:15px;opacity:.85;font-weight:500}
+.nav-links a:hover{opacity:1}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.lang-btn,.btn-login,.menu-btn{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;border-radius:10px;padding:7px 14px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.lang-btn:hover,.btn-login:hover{background:rgba(255,255,255,.1)}
+.btn-cta{background:var(--brand);color:#fff;border:0;border-radius:12px;padding:9px 20px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s}
+.btn-cta:hover{background:#0665d1}
+.menu-btn{display:none;padding:7px 10px}
+@media(max-width:900px){
+  .nav-brand-box{padding:2px 0}
+  .exact-logo-img{height:32px !important;max-height:32px !important;width:auto !important;max-width:140px !important;margin:0}
+  html[dir="ltr"] .exact-logo-img, .exact-logo-img.en-logo{height:32px !important;max-height:32px !important;width:auto !important;max-width:140px !important;margin:0}
+  .menu-btn{display:inline-flex}
+  .nav-links{display:none;order:5;width:100%;flex-direction:column;gap:0;padding:6px 0}
+  .nav-links a{display:block;padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+  body.menu-open .nav-links{display:flex}
+}
+@media(max-width:560px){.nav-actions .btn-cta{display:none}#langText{display:none}}
+
+/* الهيرو */
+.hero{background:radial-gradient(900px 400px at 85% 0,rgba(8,120,249,.35),transparent 70%),linear-gradient(165deg,var(--ink),var(--navy));color:#fff;padding:56px 5% 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;max-width:none}
+.hero>*{grid-column:1}
+.hero-art{grid-column:2;grid-row:1/6}
+.badge{width:fit-content;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 16px;font-size:13px}
+.hero h1{font-size:clamp(28px,4.6vw,48px);line-height:1.35;font-weight:700;max-width:16em}
+.hero h1 span{display:block;font-weight:500;color:#8cc4ff;margin-top:4px}
+.hero p{font-size:17px;opacity:.85;max-width:34em}
+.hero .btn-cta{width:fit-content}
+.mock{max-width:290px;margin:auto;background:#fff;color:var(--ink);border-radius:28px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,.35);border:6px solid #1c3157;position:relative}
+.mock-top{display:flex;align-items:center;gap:8px;padding:4px 2px 12px;font-size:14px}
+.mock-top i{width:30px;height:30px;border-radius:50%;background:var(--brand);display:block}
+.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mp{border:1px solid var(--line);border-radius:12px;padding:8px;font-size:12px;line-height:1.4}
+.mp u{display:block;aspect-ratio:1;border-radius:8px;margin-bottom:6px}
+.mp em{font-style:normal;font-weight:700;display:block}
+.mock-btn{margin-top:12px;background:var(--brand);color:#fff;text-align:center;border-radius:10px;padding:9px;font-weight:700;font-size:13px}
+.mock-note{position:absolute;bottom:-18px;inset-inline-start:-34px;background:#fff;color:var(--ink);border-radius:14px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:0 14px 30px rgba(14,31,59,.28);display:flex;gap:8px;align-items:center}
+.mock-note .ic{color:#0f9d6b}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:40px 5% 60px}.hero-art{grid-column:1;grid-row:auto;margin-top:18px}.mock-note{inset-inline-start:-6px}}
+
+/* الشريط المتحرك */
+.stores-ticker-section{padding:34px 0 30px;text-align:center}
+.ticker-title{font-weight:700;margin-bottom:16px;padding:0 5%;color:var(--muted);font-size:15px}
+.ticker-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ticker-track{direction:ltr;display:flex;width:max-content}
+.ticker-track>*{direction:rtl;flex:none;margin-inline-end:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 18px 7px 10px;display:flex;align-items:center;gap:8px;font-weight:500;white-space:nowrap;font-size:14px}
+.ticker-track img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.ticker-track.run{animation:tick 45s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track.run{animation:none}.ticker-wrap{overflow-x:auto}}
+
+/* الأقسام */
+.features-section,.faq-section{max-width:1100px;margin:0 auto;padding:54px 5%}
+.sec-title{font-size:clamp(23px,3.4vw,32px);font-weight:700;line-height:1.4}
+.sec-subtitle{color:var(--muted);margin:4px 0 28px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.feature-card{padding:4px 22px;border-inline-start:2px solid var(--line);position:relative}
+.feature-card:first-child{border-inline-start-color:var(--brand)}
+.feature-num{font-size:34px;font-weight:700;color:var(--brand);line-height:1.2;display:block}
+.feature-card h3{font-size:19px;margin:4px 0 6px}
+.feature-card p{color:var(--muted);font-size:15px}
+@media(max-width:760px){.grid-3{grid-template-columns:1fr;gap:22px}}
+.perks{background:#fff;border-block:1px solid var(--line)}
+.perks-in{max-width:1100px;margin:auto;padding:54px 5%}
+.perk-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;list-style:none}
+.perk-list li{display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.perk-list .ic{width:42px;height:42px;padding:10px;border-radius:12px;background:var(--soft);color:var(--brand)}
+.perk-list b{display:block;font-size:16px}
+.perk-list span{color:var(--muted);font-size:14px;display:block}
+@media(max-width:760px){.perk-list{grid-template-columns:1fr}}
+.cta-band{background:var(--ink);color:#fff;text-align:center;padding:50px 5%}
+.cta-band h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:6px;font-weight:700}
+.cta-band p{opacity:.8;margin-bottom:20px}
+
+/* الأسئلة */
+.faq-section .sec-title,.faq-section .sec-subtitle{text-align:center}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer;overflow:hidden}
+.faq-question{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-weight:700}
+.faq-icon{width:14px;height:14px;position:relative;flex:none}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--brand);border-radius:2px;transition:transform .2s}
+.faq-icon::before{inset:6px 0 auto;height:2px}.faq-icon::after{inset:0 auto auto 6px;width:2px;height:14px}
+.faq-item.open .faq-icon::after{transform:scaleY(0)}
+.faq-answer{display:none;padding:0 18px 16px;color:var(--muted);font-size:15px}
+.faq-item.open .faq-answer{display:block}
+
+/* النافذة */
+.modal-overlay{position:fixed;inset:0;background:rgba(14,31,59,.6);display:none;align-items:center;justify-content:center;z-index:200;padding:14px}
+.modal-overlay.active,.modal-overlay.show,.modal-overlay.open{display:flex}
+.modal-card{background:#fff;width:100%;max-width:410px;max-height:94vh;overflow-y:auto;border-radius:20px;padding:0 22px 22px;position:relative}
+.modal-logo-img{display:block !important;height:34px !important;max-height:34px !important;width:auto !important;max-width:160px !important;object-fit:contain !important;margin:0 auto 15px auto !important;}
+.modal-close{position:absolute;top:10px;inset-inline-start:10px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;font-size:16px;display:grid;place-items:center}
+.modal-brand-title{font-size:19px;font-weight:700}
+.modal-brand-subtitle{color:var(--muted);font-size:13px;margin-bottom:14px}
+.input-box{margin-bottom:12px;position:relative;display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:500}
+.input-box input{padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fafbfd;font-size:15px;width:100%}
+.input-box input[type="password"], .input-box input#userPassword{padding-left:45px !important;padding-right:12px !important}
+.input-box input:focus{border-color:var(--brand);outline:none;background:#fff}
+.password-toggle{position:absolute;bottom:8px;left:10px !important;right:auto !important;background:none;border:0;cursor:pointer;color:var(--muted);padding:4px;display:flex;align-items:center;justify-content:center;z-index:2}
+.password-toggle .eye-off,.password-toggle.on .eye{display:none}
+.password-toggle.on .eye-off{display:inline}
+.nav-merchant-welcome{display:none;color:#ffffff;font-size:13.5px;font-weight:600;white-space:nowrap;padding:4px 8px;background:rgba(255,255,255,0.08);border-radius:8px;border:1px solid rgba(255,255,255,0.15)}
+.forgot-pass{font-size:13px;margin:-2px 0 12px}
+.forgot-pass a{color:var(--brand)}
+.btn-submit-main{width:100%;background:var(--brand);color:#fff;border:0;border-radius:12px;padding:12px;font-weight:700;font-size:15px;cursor:pointer}
+.btn-submit-main:hover{background:#0665d1}
+.divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin:14px 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.btn-google-auth{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px;font-weight:500;font-size:14px;cursor:pointer}
+.btn-google-auth:hover{background:#f5f7fb}
+.btn-google-auth b{font-size:18px;color:#4285f4}
+.modal-footer-switch{text-align:center;font-size:14px;margin-top:14px;color:var(--muted)}
+#switchActionText{color:var(--brand);font-weight:700;cursor:pointer}
+
+/* الفوتر */
+footer{background:var(--ink);color:#c9d3e6;text-align:center;padding:34px 5% 22px}
+.social-links{display:flex;justify-content:center;gap:10px;margin-bottom:14px}
+.social-btn{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center}
+.social-btn:hover{background:var(--brand)}
+.footer-logo-container{display:inline-flex;align-items:center;margin:12px 0}
+.footer-logo-img{height:36px;width:auto;object-fit:contain;display:block;opacity:.95;margin:0}
+html[dir="ltr"] .footer-logo-img, .footer-logo-img.en-logo{height:34px;width:auto;margin:0}
+.copyright{font-size:13px;opacity:.75}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="g-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="g-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="g-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="g-eye-off" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="M2 2l20 20"/></symbol>
+<symbol id="g-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="g-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></symbol>
+<symbol id="g-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+<symbol id="g-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+<symbol id="g-undo" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+<symbol id="g-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-.9-1.4-1.3-2.5-1.3-1.4 0-2.5.7-2.5 1.8s1 1.6 2.5 2 2.5.9 2.5 2-1.1 1.8-2.5 1.8c-1.1 0-2-.4-2.5-1.3M12 6.5v1.7m0 7.6v1.7"/></symbol>
+<symbol id="g-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+<symbol id="g-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="g-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="g-tt" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+</defs></svg>
+<a class="skip" href="#how">تخطَّ إلى المحتوى</a>
+
+<nav class="navbar">
+  <a href="#" class="nav-brand-box" aria-label="Daghta">
+    <img src="Daghta_ar_white.png" id="headerLogo" class="exact-logo-img" alt="Daghta Logo" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#features" data-ar="المميزات" data-en="Features">المميزات</a></li>
+    <li><a href="#how" data-ar="كيف نعمل؟" data-en="How it Works?">كيف نعمل؟</a></li>
+    <li><a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a></li>
+    <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="lang-btn" onclick="toggleLanguage()"><svg class="ic"><use href="#g-globe"/></svg> <span id="langText">English</span></button>
+    <!-- أزرار حالة الزائر (غير مسجل الدخول) -->
+    <a href="javascript:void(0)" id="navLoginBtn" class="btn-login" onclick="openAuthModal('login')" data-ar="تسجيل الدخول" data-en="Login">تسجيل الدخول</a>
+    <a href="create_ar.html" id="navRegisterBtn" class="btn-cta" data-ar="ابدأ مجاناً 👈" data-en="Start Free 👈">ابدأ مجاناً 👈</a>
+    <!-- أزرار وحالة التاجر أو الأدمن المسجل -->
+    <span id="navMerchantWelcome" class="nav-merchant-welcome"></span>
+    <a href="admin.html" id="navAdminBtn" class="btn-cta" style="display:none;background:#ef4444;box-shadow:0 4px 14px rgba(239,68,68,0.35)" data-ar="لوحة الإدارة (Admin)" data-en="Admin Dashboard">لوحة الإدارة (Admin)</a>
+    <a href="dashboard.html" id="navDashboardBtn" class="btn-cta" style="display:none" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
+    <button id="navLogoutBtn" class="btn-login" style="display:none" onclick="handleSignOut()" data-ar="تسجيل الخروج" data-en="Sign Out">تسجيل الخروج</button>
+    <button class="menu-btn" id="menuBtn" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks"><svg class="ic"><use href="#g-menu"/></svg></button>
+  </div>
+</nav>
+
+<!-- نافذة تسجيل الدخول / إنشاء حساب -->
+<div id="authModal" class="modal-overlay">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalMainTitle">
+    <img src="Daghta_Arabic_blue.png" class="modal-logo-img" id="modalLogoImg" alt="Daghta" data-ar-logo="Daghta_Arabic_blue.png" data-en-logo="Daghta_logo_en.png">
+    <button class="modal-close" onclick="closeAuthModal()" aria-label="إغلاق">✕</button>
+    <div class="modal-brand-title" id="modalMainTitle" data-ar="ابحث عنها. أعلن عنها. قدها." data-en="Create it. Manage it. Done.">ابحث عنها. أعلن عنها. قدها.</div>
+    <div class="modal-brand-subtitle" id="modalSubTitle" data-ar="سجّل الدخول لاستكشاف المنصة الرائدة لإنشاء المتاجر في الوطن العربي." data-en="Sign in to explore the leading store platform in the Arab world.">سجّل الدخول لاستكشاف المنصة الرائدة لإنشاء المتاجر في الوطن العربي.</div>
+
+    <div class="input-box">
+      <label for="userInput" data-ar="البريد الإلكتروني أو رقم الهاتف" data-en="Email or Phone Number">البريد الإلكتروني أو رقم الهاتف</label>
+      <input type="text" id="userInput" autocomplete="username" data-ar-placeholder="أدخل بريدك الإلكتروني أو رقم الهاتف" data-en-placeholder="Enter email or phone number" placeholder="أدخل بريدك الإلكتروني أو رقم الهاتف">
+    </div>
+    <div class="input-box">
+      <label for="userPassword" data-ar="كلمة المرور" data-en="Password">كلمة المرور</label>
+      <input type="password" id="userPassword" autocomplete="current-password" data-ar-placeholder="أدخل كلمة المرور" data-en-placeholder="Enter password" placeholder="أدخل كلمة المرور">
+      <button type="button" class="password-toggle" id="togglePassword" onclick="togglePasswordVisibility()" aria-label="إظهار كلمة المرور"><svg class="ic eye"><use href="#g-eye"/></svg><svg class="ic eye-off"><use href="#g-eye-off"/></svg></button>
+    </div>
+    <div class="forgot-pass" id="forgotPassBox">
+      <a href="javascript:void(0)" onclick="alert('Password reset instructions sent.')" data-ar="هل نسيت كلمة المرور؟" data-en="Forgot password?">هل نسيت كلمة المرور؟</a>
+    </div>
+    <button class="btn-submit-main" id="mainSubmitBtn" onclick="submitAuthForm()" data-ar="تسجيل الدخول" data-en="Sign In">تسجيل الدخول</button>
+    <div class="divider"><span data-ar="أو" data-en="Or">أو</span></div>
+    <button class="btn-google-auth" onclick="triggerGoogleRealAuth()"><b>G</b><span data-ar="متابعة باستخدام Google" data-en="Continue with Google">متابعة باستخدام Google</span></button>
+    <div class="modal-footer-switch">
+      <span id="switchText" data-ar="ليس لديك حساب؟" data-en="Don't have an account?">ليس لديك حساب؟</span>
+      <span id="switchActionText" onclick="toggleAuthMode()" data-ar="سجّل الآن" data-en="Sign up">سجّل الآن</span>
+    </div>
+  </div>
+</div>
+
+<!-- الهيرو -->
+<header class="hero">
+  <div class="badge" data-ar="🚀 أسرع منصة متاجر في الوطن العربي" data-en="🚀 The Fastest Store Platform in the Arab World">🚀 أسرع منصة متاجر في الوطن العربي</div>
+  <h1 data-ar="نظّم شغلك، سيطر على حساباتك، وكل ده مجانًا! &lt;span&gt;في أقل من دقيقة!&lt;/span&gt;" data-en="Organize your work, control your accounts, and everything for free! &lt;span&gt;In less than a minute!&lt;/span&gt;">نظّم شغلك، سيطر على حساباتك، وكل ده مجانًا! <span>في أقل من دقيقة!</span></h1>
+  <p data-ar="كل شغلك في مكان واحد! نظّم أوردراتك، احسب أرباحك وخسائرك، وتابع مصاريفك ومبيعاتك من غير شيتات ولا حسابات معقدة." data-en="All your work in one place! Organize your orders, calculate your profits and losses, and track your expenses and sales.">كل شغلك في مكان واحد! نظّم أوردراتك، احسب أرباحك وخسائرك، وتابع مصاريفك ومبيعاتك من غير شيتات ولا حسابات معقدة.</p>
+  <a href="create_ar.html" id="createStoreBtn" class="btn-cta" style="padding:15px 34px;font-size:17px" data-ar="ابدأ إنشاء متجرك الآن 👈" data-en="Start Your Store Now 👈">ابدأ إنشاء متجرك الآن 👈</a>
+  <div class="hero-art" aria-hidden="true">
+    <div class="mock">
+      <div class="mock-top"><i></i><b data-ar="متجر نور (مثال)" data-en="Nour Store (sample)">متجر نور (مثال)</b></div>
+      <div class="mock-grid">
+        <div class="mp"><u style="background:#cfe3ff"></u><span data-ar="منتج أول" data-en="Product one">منتج أول</span><em>450</em></div>
+        <div class="mp"><u style="background:#ffe3cf"></u><span data-ar="منتج ثاني" data-en="Product two">منتج ثاني</span><em>320</em></div>
+      </div>
+      <div class="mock-btn" data-ar="اطلب الآن" data-en="Order now">اطلب الآن</div>
+      <div class="mock-note"><svg class="ic"><use href="#g-check"/></svg><span data-ar="طلب جديد وصلك" data-en="New order received">طلب جديد وصلك</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- الشريط -->
+<section class="stores-ticker-section" id="stores">
+  <div class="ticker-title" data-ar="انضم لأكثر من 500+ تجار ومحلات يثقون بمنصتنا" data-en="Joined by over 500+ merchants and shops trusting our platform">انضم لأكثر من 500+ تجار ومحلات يثقون بمنصتنا</div>
+  <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+</section>
+
+<!-- كيف نعمل -->
+<section class="features-section" id="how">
+  <h2 class="sec-title" data-ar="كيف تعمل منصة Daghta؟" data-en="How does Daghta platform work?">كيف تعمل منصة Daghta؟</h2>
+  <p class="sec-subtitle" data-ar="3 خطوات بسيطة تبدأ بعدها باستقبال أوردراتك فوراً" data-en="3 simple steps to start receiving your orders immediately">3 خطوات بسيطة تبدأ بعدها باستقبال أوردراتك فوراً</p>
+  <div class="grid-3">
+    <div class="feature-card"><span class="feature-num">01</span><h3 data-ar="أنشئ صفحتك" data-en="Create Your Page">أنشئ صفحتك</h3>
+      <p data-ar="اكتب اسم البراند، اختر عملتك المفضلّة، وارفع اللوجو وصورة الغلاف الخاصة بك من جهازك مباشرة." data-en="Write your brand name, choose your preferred currency, and upload your logo and cover directly.">اكتب اسم البراند، اختر عملتك المفضلّة، وارفع اللوجو وصورة الغلاف الخاصة بك من جهازك مباشرة.</p></div>
+    <div class="feature-card"><span class="feature-num">02</span><h3 data-ar="أضف المنتجات" data-en="Add Products">أضف المنتجات</h3>
+      <p data-ar="من لوحة تحكم التاجر السهلة، أضف صور منتجاتك، أسعارها، وتكلفتها لمتابعة أرباحك الصافية." data-en="From the easy merchant dashboard, add your product images, prices, and costs.">من لوحة تحكم التاجر السهلة، أضف صور منتجاتك، أسعارها، وتكلفتها لمتابعة أرباحك الصافية.</p></div>
+    <div class="feature-card"><span class="feature-num">03</span><h3 data-ar="شارك واستقبل الطلبات" data-en="Share &amp; Receive Orders">شارك واستقبل الطلبات</h3>
+      <p data-ar="انسخ رابط صفحة متجرك المباشر وشيره في السوشيال ميديا، وخلّي كل طلباتك متجمعة ومنظمة في صفحة واحدة!" data-en="Copy your direct store link and share it on social media, keeping all orders organized!">انسخ رابط صفحة متجرك المباشر وشيره في السوشيال ميديا، وخلّي كل طلباتك متجمعة ومنظمة في صفحة واحدة!</p></div>
+  </div>
+</section>
+
+<!-- المميزات -->
+<section class="perks" id="features"><div class="perks-in">
+  <h2 class="sec-title" data-ar="كل اللي محتاجه لتدير متجرك" data-en="Everything you need to run your store">كل اللي محتاجه لتدير متجرك</h2>
+  <p class="sec-subtitle" data-ar="من أول الطلب لحد التسليم والمرتجع" data-en="From the first order to delivery and returns">من أول الطلب لحد التسليم والمرتجع</p>
+  <ul class="perk-list">
+    <li><svg class="ic"><use href="#g-chart"/></svg><div><b data-ar="أرباحك وخسائرك بوضوح" data-en="Clear profits and losses">أرباحك وخسائرك بوضوح</b><span data-ar="سجّل تكلفة كل منتج وتابع صافي ربحك من غير شيتات." data-en="Record each product's cost and track your net profit without spreadsheets.">سجّل تكلفة كل منتج وتابع صافي ربحك من غير شيتات.</span></div></li>
+    <li><svg class="ic"><use href="#g-list"/></svg><div><b data-ar="أوردراتك منظمة" data-en="Organized orders">أوردراتك منظمة</b><span data-ar="كل الطلبات بتفاصيلها (الاسم، الموبايل، العنوان، المنتج) في لوحة واحدة." data-en="All orders with full details in a single dashboard.">كل الطلبات بتفاصيلها (الاسم، الموبايل، العنوان، المنتج) في لوحة واحدة.</span></div></li>
+    <li><svg class="ic"><use href="#g-chat"/></svg><div><b data-ar="الطلب يوصلك على الواتساب" data-en="Orders reach your WhatsApp">الطلب يوصلك على الواتساب</b><span data-ar="تفاصيل الطلب بتوصلك على لوحة التحكم والواتساب فور تأكيد العميل." data-en="Order details reach your dashboard and WhatsApp as soon as the customer confirms.">تفاصيل الطلب بتوصلك على لوحة التحكم والواتساب فور تأكيد العميل.</span></div></li>
+    <li><svg class="ic"><use href="#g-truck"/></svg><div><b data-ar="تتبع الطلب لعميلك" data-en="Order tracking for customers">تتبع الطلب لعميلك</b><span data-ar="عميلك بيتابع حالة طلبه برقم تتبع من صفحة متجرك." data-en="Your customer follows their order status with a tracking number on your store page.">عميلك بيتابع حالة طلبه برقم تتبع من صفحة متجرك.</span></div></li>
+    <li><svg class="ic"><use href="#g-undo"/></svg><div><b data-ar="استرجاع واستبدال منظم" data-en="Organized returns and exchanges">استرجاع واستبدال منظم</b><span data-ar="طلبات المرتجع بتتسجل برقم وسبب، فمفيش رسايل ضايعة." data-en="Return requests are recorded with a number and reason, so nothing gets lost.">طلبات المرتجع بتتسجل برقم وسبب، فمفيش رسايل ضايعة.</span></div></li>
+    <li><svg class="ic"><use href="#g-coins"/></svg><div><b data-ar="بعملتك أنت" data-en="In your own currency">بعملتك أنت</b><span data-ar="اختار العملة المناسبة (ج.م، ر.س، د.إ، $) وتظهر لعملائك في أي دولة عربية." data-en="Pick your currency (EGP, SAR, AED, $) and show it to customers across the Arab world.">اختار العملة المناسبة (ج.م، ر.س، د.إ، $) وتظهر لعملائك في أي دولة عربية.</span></div></li>
+  </ul>
+</div></section>
+
+<!-- دعوة للتسجيل -->
+<section class="cta-band">
+  <h2 data-ar="جاهز تفتح متجرك؟" data-en="Ready to open your store?">جاهز تفتح متجرك؟</h2>
+  <p data-ar="هتخلّص في أقل من دقيقة، ومن غير أي خبرة برمجية." data-en="You'll be done in under a minute, with no programming experience.">هتخلّص في أقل من دقيقة، ومن غير أي خبرة برمجية.</p>
+  <a href="create_ar.html" class="btn-cta" style="padding:14px 32px;font-size:16px" data-ar="ابدأ مجاناً" data-en="Start for free">ابدأ مجاناً</a>
+</section>
+
+<!-- الأسئلة -->
+<section class="faq-section" id="faq">
+  <h2 class="sec-title" data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h2>
+  <p class="sec-subtitle" data-ar="كل ما تحتاج معرفته عن استخدام المنصة" data-en="Everything you need to know about using the platform">كل ما تحتاج معرفته عن استخدام المنصة</p>
+
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span data-ar="هل نحتاج لخبرة برمجية لإنشاء المتجر؟" data-en="Do we need programming experience to create a store?">هل نحتاج لخبرة برمجية لإنشاء المتجر؟</span><span class="faq-icon"></span></div>
+    <div class="faq-answer" data-ar="لا، مش محتاج أي خبرة برمجية! تقدر تبدأ بسهولة، وتنظّم أوردراتك وحساباتك وتتابع أرباحك من خلال واجهة بسيطة وسهلة الاستخدام." data-en="No, you don't need any programming experience! You can start easily and organize your orders and accounts.">لا، مش محتاج أي خبرة برمجية! تقدر تبدأ بسهولة، وتنظّم أوردراتك وحساباتك وتتابع أرباحك من خلال واجهة بسيطة وسهلة الاستخدام.</div></div>
+
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span data-ar="هل المنصة مجانية؟" data-en="Is the platform free?">هل المنصة مجانية؟</span><span class="faq-icon"></span></div>
+    <div class="faq-answer" data-ar="أيوه، تقدر تنشئ متجرك وتبدأ تنظّم أوردراتك وحساباتك مجاناً." data-en="Yes, you can create your store and start organizing your orders and accounts for free.">أيوه، تقدر تنشئ متجرك وتبدأ تنظّم أوردراتك وحساباتك مجاناً.</div></div>
+
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span data-ar="هل تظهر الصفحة للتجار والعملاء في الدول العربية؟" data-en="Does the page appear for merchants and customers in Arab countries?">هل تظهر الصفحة للتجار والعملاء في الدول العربية؟</span><span class="faq-icon"></span></div>
+    <div class="faq-answer" data-ar="نعم، يمكنك اختيار عملتك المناسبة (ج.م، ر.س، د.إ، $... إلخ)، وستظهر صفحة متجرك بسرعة عالية لجميع العملاء في أي دولة عربية." data-en="Yes, you can choose your appropriate currency (EGP, SAR, AED, $... etc), and your store page will appear with high speed.">نعم، يمكنك اختيار عملتك المناسبة (ج.م، ر.س، د.إ، $... إلخ)، وستظهر صفحة متجرك بسرعة عالية لجميع العملاء في أي دولة عربية.</div></div>
+
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span data-ar="كيف استقبل أوردرات العملاء؟" data-en="How do I receive customer orders?">كيف استقبل أوردرات العملاء؟</span><span class="faq-icon"></span></div>
+    <div class="faq-answer" data-ar="تتوجه تفاصيل الطلب بالكامل (الاسم، الموبايل، العنوان، والمنتج) تلقائياً إلى لوحة تحكمك وإلى محادثة الواتساب الخاصة بك فور تأكيد العميل." data-en="Full order details (name, mobile, address, and product) go automatically to your dashboard and WhatsApp chat.">تتوجه تفاصيل الطلب بالكامل (الاسم، الموبايل، العنوان، والمنتج) تلقائياً إلى لوحة تحكمك وإلى محادثة الواتساب الخاصة بك فور تأكيد العميل.</div></div>
+
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-question"><span data-ar="هل عميلي يقدر يتابع طلبه أو يطلب مرتجع؟" data-en="Can my customer track an order or request a return?">هل عميلي يقدر يتابع طلبه أو يطلب مرتجع؟</span><span class="faq-icon"></span></div>
+    <div class="faq-answer" data-ar="أيوه، العميل بياخد رقم تتبع بعد الطلب ويتابع حالته من صفحة متجرك، ويقدر يقدّم طلب استرجاع أو استبدال بنفس الرقم." data-en="Yes, the customer gets a tracking number after ordering, follows the status on your store page, and can request a return or exchange with the same number.">أيوه، العميل بياخد رقم تتبع بعد الطلب ويتابع حالته من صفحة متجرك، ويقدر يقدّم طلب استرجاع أو استبدال بنفس الرقم.</div></div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="#" class="social-btn facebook" aria-label="Facebook"><svg class="ic"><use href="#g-fb"/></svg></a>
+    <a href="#" class="social-btn instagram" aria-label="Instagram"><svg class="ic"><use href="#g-ig"/></svg></a>
+    <a href="#" class="social-btn tiktok" aria-label="TikTok"><svg class="ic"><use href="#g-tt"/></svg></a>
+    <a href="#" class="social-btn whatsapp" aria-label="WhatsApp"><svg class="ic"><use href="#g-chat"/></svg></a>
+  </div>
+  <a href="contact.html" style="color:#cbd5e1;font-size:14px" data-ar="اتصل بنا والدعم الفني" data-en="Contact Us &amp; Support">اتصل بنا والدعم الفني</a>
+  <div style="display:flex;justify-content:center;gap:18px;margin:10px 0 4px;flex-wrap:wrap">
+    <a href="pricing.html" style="color:#94a3b8;font-size:13px" data-ar="الأسعار والباقات" data-en="Pricing">الأسعار والباقات</a>
+    <a href="terms.html" style="color:#94a3b8;font-size:13px" data-ar="الشروط والأحكام" data-en="Terms &amp; Conditions">الشروط والأحكام</a>
+    <a href="privacy.html" style="color:#94a3b8;font-size:13px" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+    <a href="returns.html" style="color:#94a3b8;font-size:13px" data-ar="سياسة الاسترجاع والشحن" data-en="Returns &amp; Shipping">سياسة الاسترجاع والشحن</a>
+  </div>
+  <div><img src="Daghta_ar_white.png" id="footerLogo" class="footer-logo-img" alt="Daghta Logo" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png"></div>
+  <div class="copyright" data-ar="جميع الحقوق محفوظة لمنصة Daghta © 2026" data-en="All rights reserved for Daghta platform © 2026">جميع الحقوق محفوظة لمنصة Daghta © 2026</div>
+</footer>
+
+<!-- ======================================================
+     Firebase Auth + Language Logic (inlined — main.js لا يوجد)
+     ====================================================== -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+/* إعدادات Firebase */
+const firebaseConfig = {
+  apiKey: "AIzaSyDmsyy5hZmES8q11bkJlmO9WZ5wght8Z04",
+  authDomain: "daghta-5ec61.firebaseapp.com",
+  projectId: "daghta-5ec61",
+  storageBucket: "daghta-5ec61.firebasestorage.app",
+  messagingSenderId: "496395341194",
+  appId: "1:496395341194:web:b00139eb31c40ca2f30c73",
+  measurementId: "G-ZPG9J6KBVW"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+/* ====== Auth State: إظهار / إخفاء عناصر النافبار حسب حالة تسجيل الدخول ====== */
+const SUPER_ADMIN_EMAIL = 'mohamed.ramamda1989@gmail.com';
+
+onAuthStateChanged(auth, (user) => {
+  const loginBtn    = document.getElementById('navLoginBtn');
+  const registerBtn = document.getElementById('navRegisterBtn');
+  const dashBtn     = document.getElementById('navDashboardBtn');
+  const adminBtn    = document.getElementById('navAdminBtn');
+  const logoutBtn   = document.getElementById('navLogoutBtn');
+  const welcomeEl   = document.getElementById('navMerchantWelcome');
+
+  if (user) {
+    const userEmail = (user.email || '').toLowerCase().trim();
+    const isAdmin = userEmail === SUPER_ADMIN_EMAIL;
+    const merchantName = user.displayName || (user.email ? user.email.split('@')[0] : 'التاجر');
+
+    if (welcomeEl) {
+      welcomeEl.textContent = isAdmin ? `مرحباً، مدير المنصة 👑` : `مرحباً، ${merchantName}`;
+      welcomeEl.style.display = 'inline-flex';
+    }
+    if (loginBtn)    loginBtn.style.display    = 'none';
+    if (registerBtn) registerBtn.style.display = 'none';
+    if (logoutBtn)   logoutBtn.style.display   = 'inline-flex';
+
+    if (isAdmin) {
+      if (adminBtn) adminBtn.style.display = 'inline-flex';
+      if (dashBtn)  dashBtn.style.display  = 'none';
+    } else {
+      if (adminBtn) adminBtn.style.display = 'none';
+      if (dashBtn)  dashBtn.style.display  = 'inline-flex';
+    }
+  } else {
+    /* زائر غير مسجل: إخفاء الترحيب ولوحة التحكم، والإبقاء فقط على أزرار الدخول والتسجيل */
+    if (welcomeEl)   welcomeEl.style.display   = 'none';
+    if (loginBtn)    loginBtn.style.display    = 'inline-flex';
+    if (registerBtn) registerBtn.style.display = 'inline-flex';
+    if (dashBtn)     dashBtn.style.display     = 'none';
+    if (adminBtn)    adminBtn.style.display    = 'none';
+    if (logoutBtn)   logoutBtn.style.display   = 'none';
+  }
+});
+
+/* ====== فتح / إغلاق نافذة تسجيل الدخول ====== */
+let authMode = 'login'; // 'login' | 'register'
+
+window.openAuthModal = function(mode) {
+  authMode = mode || 'login';
+  _updateModalLabels();
+  document.getElementById('authModal').classList.add('active');
+  document.getElementById('userInput').focus();
+};
+
+window.closeAuthModal = function() {
+  document.getElementById('authModal').classList.remove('active');
+};
+
+window.toggleAuthMode = function() {
+  authMode = (authMode === 'login') ? 'register' : 'login';
+  _updateModalLabels();
+};
+
+function _updateModalLabels() {
+  const isAr = document.documentElement.lang === 'ar';
+  const isLogin = authMode === 'login';
+  const submitBtn = document.getElementById('mainSubmitBtn');
+  const switchText = document.getElementById('switchText');
+  const switchAction = document.getElementById('switchActionText');
+  const forgotBox = document.getElementById('forgotPassBox');
+  if (submitBtn)   submitBtn.textContent = isLogin ? (isAr ? 'تسجيل الدخول' : 'Sign In') : (isAr ? 'إنشاء حساب' : 'Create Account');
+  if (switchText)  switchText.textContent = isLogin ? (isAr ? 'ليس لديك حساب؟' : "Don't have an account?") : (isAr ? 'لديك حساب بالفعل؟' : 'Already have an account?');
+  if (switchAction)switchAction.textContent = isLogin ? (isAr ? 'سجّل الآن' : 'Sign up') : (isAr ? 'سجّل الدخول' : 'Sign in');
+  if (forgotBox)   forgotBox.style.display = isLogin ? '' : 'none';
+}
+
+/* ====== إرسال نموذج تسجيل الدخول / إنشاء حساب ====== */
+window.submitAuthForm = async function() {
+  const email = document.getElementById('userInput').value.trim();
+  const pass  = document.getElementById('userPassword').value;
+  if (!email || !pass) {
+    alert(document.documentElement.lang === 'ar' ? 'يرجى ملء جميع الحقول' : 'Please fill in all fields');
+    return;
+  }
+  try {
+    let cred;
+    if (authMode === 'login') {
+      cred = await signInWithEmailAndPassword(auth, email, pass);
+    } else {
+      cred = await createUserWithEmailAndPassword(auth, email, pass);
+    }
+    closeAuthModal();
+
+    const loggedEmail = (cred.user && cred.user.email ? cred.user.email : email).toLowerCase().trim();
+    if (loggedEmail === SUPER_ADMIN_EMAIL) {
+      window.location.href = 'admin.html';
+    } else {
+      window.location.href = 'dashboard.html';
+    }
+  } catch(err) {
+    const msgs = {
+      'auth/user-not-found'   : 'البريد الإلكتروني غير مسجل',
+      'auth/wrong-password'   : 'كلمة المرور غير صحيحة',
+      'auth/email-already-in-use': 'هذا البريد مسجل بالفعل',
+      'auth/weak-password'    : 'كلمة المرور ضعيفة جداً (6 أحرف على الأقل)',
+      'auth/invalid-email'    : 'صيغة البريد الإلكتروني غير صحيحة'
+    };
+    alert(msgs[err.code] || err.message);
+  }
+};
+
+/* ====== تسجيل الدخول بـ Google ====== */
+window.triggerGoogleRealAuth = async function() {
+  try {
+    const provider = new GoogleAuthProvider();
+    const cred = await signInWithPopup(auth, provider);
+    closeAuthModal();
+
+    const gEmail = (cred.user && cred.user.email ? cred.user.email : '').toLowerCase().trim();
+    if (gEmail === SUPER_ADMIN_EMAIL) {
+      window.location.href = 'admin.html';
+    } else {
+      window.location.href = 'dashboard.html';
+    }
+  } catch(err) {
+    if (err.code !== 'auth/popup-closed-by-user') alert(err.message);
+  }
+};
+
+/* ====== تسجيل الخروج ====== */
+window.handleSignOut = async function() {
+  await signOut(auth);
+  window.location.href = 'index.html';
+};
+</script>
+
+<script>
+/* واجهة فقط: القائمة المتنقلة، FAQ، اللغة، الشريط المتحرك */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* قائمة الهاتف */
+  $('menuBtn').addEventListener('click', function () {
+    var o = document.body.classList.toggle('menu-open'); this.setAttribute('aria-expanded', o);
+  });
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { document.body.classList.remove('menu-open'); });
+  });
+
+  /* الأسئلة الشائعة */
+  window.toggleFaq = function (el) {
+    var open = !el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+    if (open) el.classList.add('open');
+  };
+  document.querySelectorAll('.faq-item').forEach(function (el) {
+    el.tabIndex = 0; el.setAttribute('role', 'button');
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.toggleFaq(el); } });
+  });
+
+  /* إظهار / إخفاء كلمة المرور */
+  window.togglePasswordVisibility = function () {
+    var i = $('userPassword'), show = i.type === 'password';
+    i.type = show ? 'text' : 'password'; $('togglePassword').classList.toggle('on', show);
+  };
+
+  /* إغلاق النافذة بـ Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && typeof window.closeAuthModal === 'function') window.closeAuthModal();
+  });
+
+  /* تبديل اللغة */
+  var isAr = true;
+  window.toggleLanguage = function () {
+    isAr = !isAr;
+    var html = document.getElementById('htmlRoot');
+    html.lang = isAr ? 'ar' : 'en';
+    html.dir  = isAr ? 'rtl' : 'ltr';
+    $('langText').textContent = isAr ? 'English' : 'عربي';
+
+    /* تحديث النصوص بالـ data-ar / data-en */
+    document.querySelectorAll('[data-ar][data-en]').forEach(function (el) {
+      var val = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (el.tagName === 'INPUT') { el.placeholder = val; }
+      else if (el.tagName === 'TITLE' || !el.children.length) { el.textContent = val; }
+      else { el.innerHTML = val; }
+    });
+
+    /* الشعارات */
+    ['headerLogo','footerLogo','modalLogoImg'].forEach(function(id){
+      var img = $(id);
+      if (!img) return;
+      img.src = isAr ? img.getAttribute('data-ar-logo') : img.getAttribute('data-en-logo');
+      img.classList.toggle('en-logo', !isAr);
+    });
+
+    /* Placeholder بالداتا المخصصة */
+    document.querySelectorAll('[data-ar-placeholder]').forEach(function(el){
+      el.placeholder = isAr ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+    });
+
+    /* زر "ابدأ مجاناً" في النافبار */
+    var regBtn = $('navRegisterBtn');
+    if (regBtn) regBtn.href = isAr ? 'create_ar.html' : 'create_en.html';
+  };
+
+  /* الشريط المتحرك (يحتاج main.js يضيف العناصر أو نضيفها هنا كـ fallback) */
+  var stores = [
+    {name:'متجر نور',emoji:'🌟'},{name:'بيتي',emoji:'🏠'},{name:'موضة+',emoji:'👗'},
+    {name:'Gadgetly',emoji:'📱'},{name:'طازج',emoji:'🥗'},{name:'سبارك',emoji:'✨'},
+    {name:'أناقة',emoji:'💎'},{name:'GreenBox',emoji:'🌿'},{name:'فنجان',emoji:'☕'},
+    {name:'Craftly',emoji:'🎨'}
+  ];
+  var tr = $('tickerTrack');
+  if (tr && !tr.children.length) {
+    stores.forEach(function(s){
+      var el = document.createElement('div');
+      el.innerHTML = '<span style="font-size:18px">'+s.emoji+'</span><span>'+s.name+'</span>';
+      tr.appendChild(el);
+    });
+  }
+
+  var t, busy = false;
+  function dup() {
+    busy = true; tr.classList.remove('run');
+    tr.querySelectorAll('[data-clone]').forEach(function (n) { n.remove(); });
+    var kids = Array.prototype.slice.call(tr.children);
+    if (kids.length) {
+      kids.forEach(function (c) { var k = c.cloneNode(true); k.setAttribute('data-clone', 1); k.setAttribute('aria-hidden', 'true'); tr.appendChild(k); });
+      tr.classList.add('run');
+    }
+    setTimeout(function () { busy = false; }, 0);
+  }
+  new MutationObserver(function () { if (busy) return; clearTimeout(t); t = setTimeout(dup, 350); }).observe(tr, { childList: true });
+  setTimeout(dup, 600);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1f3b">
+<title id="storePageTitle">متجر إلكتروني - منصة ضغطة</title>
+<meta name="description" content="تصفح المنتجات واطلب مباشرة عبر الواتساب من متجر ضغطة السحابي.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e1f3b;
+  --navy: #12386f;
+  --navy-dark: #091528;
+  --brand: #0878f9;
+  --brand-hover: #0665d1;
+  --brand-light: #eaf3ff;
+  --brand-glow: rgba(8, 120, 249, 0.16);
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --line: #e2e8f0;
+  --muted: #64748b;
+  --ok: #0f9d6b;
+  --wa: #25d366;
+  --wa-hover: #1eb857;
+  --shadow-sm: 0 2px 8px rgba(14, 31, 59, 0.04);
+  --shadow-md: 0 10px 28px rgba(14, 31, 59, 0.07);
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ic {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  vertical-align: -0.2em;
+}
+
+/* ==================== شريط التنقل الموحد ==================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 6%;
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-brand {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none;
+  padding: 2px 0;
+  overflow: visible;
+  max-height: none;
+}
+
+.navbar .logo img,
+.nav-logo img,
+.logo img,
+.nav-logo,
+header img[src*="Daghta"],
+nav img[src*="Daghta"] {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+html[dir="ltr"] .nav-logo, .nav-logo.en-logo {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  margin: 0;
+  object-fit: contain !important;
+}
+
+.store-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 6%;
+}
+
+.nav-store-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-store-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(8, 120, 249, 0.3);
+}
+
+.nav-store-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-store-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn-cart-nav {
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.btn-cart-nav:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cart-badge {
+  background: var(--brand);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s ease;
+  padding: 6px 0;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brand);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-nav-cta {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(8, 120, 249, 0.35);
+}
+
+.btn-nav-cta:hover {
+  background: var(--brand-hover);
+}
+
+.btn-track-nav {
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-track-nav:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== ترويسة المتجر (Store Header / Banner) ==================== */
+.store-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  color: #fff;
+  position: relative;
+}
+
+.store-cover {
+  height: 180px;
+  background: radial-gradient(circle at 70% 30%, rgba(8, 120, 249, 0.4), transparent 60%),
+              linear-gradient(135deg, var(--ink) 0%, var(--navy) 100%) center/cover no-repeat;
+}
+
+.store-header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 6% 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.store-profile {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: -50px;
+}
+
+.store-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: var(--brand) center/cover no-repeat;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(14, 31, 59, 0.25);
+  flex: none;
+}
+
+.store-meta h1 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.store-meta p {
+  color: #cbd5e1;
+  font-size: 14.5px;
+  margin-top: 2px;
+}
+
+.store-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-wa-direct {
+  background: var(--wa);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-wa-direct:hover {
+  background: var(--wa-hover);
+  transform: translateY(-2px);
+}
+
+/* ==================== شبكة المنتجات (Products Grid) ==================== */
+.store-body {
+  max-width: 1140px;
+  width: 100%;
+  margin: 36px auto;
+  padding: 0 6%;
+  flex: 1;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-head h2 {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.currency-badge {
+  background: var(--brand-light);
+  color: var(--brand);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.product-img {
+  width: 100%;
+  height: 190px;
+  background: #f1f5f9 center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 14px;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.old-price {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.btn-order-now {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-order-now:hover {
+  background: var(--brand-hover);
+}
+
+/* ==================== نافذة إتمام الطلب (Checkout Modal) ==================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 31, 59, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  place-items: center;
+  z-index: 200;
+  padding: 16px;
+}
+
+.modal-overlay.active {
+  display: grid;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btn-close-modal {
+  background: #f1f5f9;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+.modal-field {
+  margin-bottom: 14px;
+}
+
+.modal-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.modal-field input,
+.modal-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.modal-field input:focus,
+.modal-field textarea:focus {
+  border-color: var(--brand);
+}
+
+.order-summary-box {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+}
+
+.order-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.order-summary-row.total {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brand);
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
+.btn-confirm-order {
+  width: 100%;
+  background: var(--wa);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+}
+
+.btn-confirm-order:hover {
+  background: var(--wa-hover);
+}
+
+/* ==================== الفوتر الموحد ==================== */
+.page-footer {
+  background: var(--ink);
+  color: #94a3b8;
+  padding: 28px 6%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13.5px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.95;
+  margin: 0;
+}
+
+html[dir="ltr"] .footer-logo, .footer-logo.en-logo {
+  height: 34px;
+  width: auto;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-brand {
+    padding: 2px 0;
+  }
+  .nav-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  html[dir="ltr"] .nav-logo, .nav-logo.en-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .store-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .store-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -40px;
+    gap: 12px;
+  }
+  .store-actions {
+    width: 100%;
+  }
+  .btn-wa-direct {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==================== شاشة حجب المتجر قيد التجهيز والمراجعة ==================== */
+.store-pending-gate {
+  max-width: 760px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  width: 100%;
+}
+.pending-gate-card {
+  background: #ffffff;
+  border: 1.5px solid #fedf89;
+  border-radius: 20px;
+  padding: 44px 32px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(14, 31, 59, 0.08);
+}
+.pending-gate-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  animation: pulse-wait 2s infinite ease-in-out;
+}
+@keyframes pulse-wait {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.pending-gate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff3dc;
+  color: #b54708;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: 1px solid #fedf89;
+}
+.pending-gate-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0e1f3b;
+  margin-bottom: 12px;
+}
+.pending-gate-desc {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0 auto 26px;
+}
+.pending-meta-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 20px;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+  font-size: 14px;
+}
+.pending-meta-box .meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 8px;
+}
+.pending-meta-box .meta-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.badge-pending-text {
+  color: #b54708;
+  background: #fef08a;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+.pending-gate-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-pending-primary {
+  background: var(--brand);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-pending-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+}
+.btn-pending-secondary {
+  background: #fff;
+  color: #0e1f3b;
+  border: 1.5px solid #cbd5e1;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-pending-secondary:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Icons Definition -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="g-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="g-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  </defs>
+</svg>
+
+<!-- شريط متجر العميل (مخصص للتسوق وتتبع الطلبات فقط) -->
+<nav class="navbar store-navbar" role="navigation">
+  <div class="nav-store-brand">
+    <div class="nav-store-badge" id="navStoreBadge">🛍️</div>
+    <span class="nav-store-name" id="navStoreName">متجر نور للأزياء</span>
+  </div>
+
+  <div class="nav-actions">
+    <button type="button" class="btn-track-nav" onclick="openTrackModal()" title="تتبع حالة طلبك">
+      <svg class="ic"><use href="#g-truck"/></svg>
+      <span>تتبع طلبك</span>
+    </button>
+    <button type="button" class="btn-cart-nav" onclick="openCartQuickView()" title="سلة التسوق">
+      <svg class="ic"><use href="#g-bag"/></svg>
+      <span>عربة التسوق</span>
+      <span class="cart-badge" id="cartCountBadge" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ترويسة المتجر والغلاف -->
+<header class="store-hero">
+  <div class="store-cover" id="storeCoverBanner"></div>
+  <div class="store-header-inner">
+    <div class="store-profile">
+      <div class="store-avatar" id="storeAvatar">D</div>
+      <div class="store-meta">
+        <h1 id="storeTitle">متجر نور للأزياء</h1>
+        <p id="storeTagline">أحدث صيحات الموضة العصرية بأفضل الأسعار وبشحن سريع</p>
+      </div>
+    </div>
+    <div class="store-actions">
+      <a href="#" id="storeWaBtn" target="_blank" class="btn-wa-direct">
+        <svg class="ic" style="width:20px;height:20px"><use href="#g-wa"/></svg>
+        <span>تواصل عبر واتساب</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- قسم حجب المتجر قيد التجهيز والمراجعة -->
+<section class="store-pending-gate" id="storePendingGate" style="display:none">
+  <div class="pending-gate-card">
+    <div class="pending-gate-icon">⏳</div>
+    <div class="pending-gate-badge">حالة المتجر: قيد التجهيز والمراجعة</div>
+    <h2 class="pending-gate-title">المتجر قيد التجهيز والمراجعة</h2>
+    <p class="pending-gate-desc">
+      أهلاً بك! هذا المتجر قيد التجهيز والمراجعة الفنية من قِبل إدارة منصة ضغطة لضمان الجودة ومطابقة المنتجات.<br>
+      سيكون المتجر متاحاً رسمياً للزوار وتصفح المنتجات واستقبال الطلبات فور انتهاء المراجعة خلال <strong>24 ساعة</strong>.
+    </p>
+    <div class="pending-meta-box">
+      <div class="meta-row">
+        <span>اسم المتجر:</span>
+        <strong id="pendingStoreName">متجر ضغطة</strong>
+      </div>
+      <div class="meta-row">
+        <span>حالة الاعتماد:</span>
+        <span class="badge-pending-text">قيد التدقيق (Pending Review)</span>
+      </div>
+      <div class="meta-row">
+        <span>فترة التفعيل المتوقعة:</span>
+        <strong>خلال 24 ساعة كحد أقصى</strong>
+      </div>
+    </div>
+    <div class="pending-gate-actions">
+      <a href="index.html" class="btn-pending-primary">العودة إلى الصفحة الرئيسية</a>
+      <a href="contact.html" class="btn-pending-secondary">تواصل مع الدعم الفني</a>
+    </div>
+  </div>
+</section>
+
+<!-- جسم المتجر وقائمة المنتجات -->
+<main class="store-body" id="storeMainBody">
+  <div class="section-head">
+    <h2>
+      <svg class="ic" style="color:var(--brand)"><use href="#g-bag"/></svg>
+      <span>منتجات المتجر</span>
+    </h2>
+    <span class="currency-badge" id="storeCurrencyBadge">العملة: جنيه مصري (EGP)</span>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    <!-- كروت المنتجات تضاف ديناميكياً -->
+  </div>
+</main>
+
+<!-- نافذة الطلب المباشر عبر واتساب -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="checkoutProdTitle">إتمام الطلب</h3>
+      <button type="button" class="btn-close-modal" onclick="closeCheckout()">✕</button>
+    </div>
+
+    <form id="checkoutForm" onsubmit="handleConfirmOrder(event)">
+      <div class="modal-field">
+        <label for="custName">الاسم بالكامل *</label>
+        <input type="text" id="custName" required placeholder="محمد أحمد">
+      </div>
+      <div class="modal-field">
+        <label for="custPhone">رقم الموبايل *</label>
+        <input type="tel" id="custPhone" required placeholder="01012345678" dir="ltr">
+      </div>
+      <div class="modal-field">
+        <label for="custAddress">عنوان التوصيل بالتفصيل *</label>
+        <textarea id="custAddress" rows="2" required placeholder="المدينة، الشارع، رقم المبنى"></textarea>
+      </div>
+
+      <div class="order-summary-box">
+        <div class="order-summary-row">
+          <span>سعر المنتج:</span>
+          <span id="sumProdPrice">0</span>
+        </div>
+        <div class="order-summary-row">
+          <span>تكلفة الشحن:</span>
+          <span id="sumShipping">50</span>
+        </div>
+        <div class="order-summary-row total">
+          <span>الإجمالي الكلي:</span>
+          <span id="sumTotal">0</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-confirm-order">
+        <svg class="ic"><use href="#g-wa"/></svg>
+        <span>تأكيد الطلب وإرساله للواتساب</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- نافذة تتبع الطلب -->
+<div class="modal-overlay" id="trackModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>تتبع حالة طلبك</h3>
+      <button type="button" class="btn-close-modal" onclick="closeTrackModal()">✕</button>
+    </div>
+    <div class="modal-field">
+      <label for="trackInput">أدخل رقم التتبع (ORD-XXXX):</label>
+      <input type="text" id="trackInput" placeholder="ORD-123456" dir="ltr">
+    </div>
+    <div id="trackResult" style="display:none;margin-top:14px;padding:12px;background:#f8fafc;border-radius:10px;font-size:14px"></div>
+    <button type="button" class="btn-order-now" style="margin-top:12px" onclick="searchTrackOrder()">بحث عن الطلب</button>
+  </div>
+</div>
+
+<!-- الفوتر الموحد -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html">
+        <img src="Daghta_ar_white.png" class="footer-logo" alt="Daghta">
+      </a>
+      <span>مدعوم بواسطة منصة ضغطة © 2026</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="store.html">المتجر</a></li>
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDmsyy5hZmES8q11bkJlmO9WZ5wght8Z04",
+  authDomain: "daghta-5ec61.firebaseapp.com",
+  projectId: "daghta-5ec61",
+  storageBucket: "daghta-5ec61.firebasestorage.app",
+  messagingSenderId: "496395341194",
+  appId: "1:496395341194:web:b00139eb31c40ca2f30c73",
+  measurementId: "G-ZPG9J6KBVW"
+};
+
+let db = null;
+try {
+  const app = initializeApp(firebaseConfig, 'store-app');
+  db = getFirestore(app);
+} catch(e) {
+  console.warn("Firebase store init:", e);
+}
+
+// قراءة بيانات المتجر المخزنة
+const defaultStore = {
+  name: 'متجر نور للأزياء',
+  tagline: 'أحدث صيحات الموضة العصرية بأفضل الأسعار وبشحن سريع',
+  currency: 'EGP',
+  shippingFee: 50,
+  whatsapp: '201012345678',
+  logo: '',
+  cover: '',
+  status: 'active'
+};
+
+let currentStore = defaultStore;
+
+// تتبع وتسجيل الزيارات في Firestore لمجموعة analytics (Live Traffic Tracker)
+async function trackStoreVisit(slug) {
+  if (!db) return;
+  try {
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    const device = isMobile ? 'mobile' : 'desktop';
+    const ref = document.referrer || 'direct';
+    const pageName = location.pathname.split('/').pop() || 'store.html';
+
+    let sid = sessionStorage.getItem('daghta_sid');
+    if (!sid) {
+      sid = 'sid_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+      sessionStorage.setItem('daghta_sid', sid);
+    }
+
+    await addDoc(collection(db, 'analytics'), {
+      page: pageName + (slug ? `?s=${slug}` : ''),
+      path: pageName,
+      storeSlug: slug || 'general',
+      referrer: ref,
+      device: device,
+      sessionId: sid,
+      ts: serverTimestamp(),
+      createdAt: new Date().toISOString()
+    });
+  } catch (err) {
+    console.debug('Analytics tracking skipped:', err);
+  }
+}
+
+async function initStore() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const slug = urlParams.get('s');
+
+  // تسجيل الزيارة فورياً في تحليلات المنصة
+  trackStoreVisit(slug);
+
+  let loaded = false;
+  // 1. محاولة جلب المتجر من Firestore أولاً عند توفر slug
+  if (slug && db) {
+    try {
+      const snap = await getDoc(doc(db, 'stores', slug));
+      if (snap.exists()) {
+        currentStore = Object.assign({}, defaultStore, snap.data());
+        currentStore.slug = currentStore.slug || slug;
+        loaded = true;
+      }
+    } catch(err) {
+      console.warn("Firestore fetch error:", err);
+    }
+  }
+
+  // 2. البحث في localStorage عند عدم الجلب من السحابة
+  if (!loaded) {
+    try {
+      const savedCur = localStorage.getItem('daghta_current_store');
+      const savedStore = localStorage.getItem('daghta_store');
+      const targetStr = savedCur || savedStore;
+      if (targetStr) {
+        const parsed = JSON.parse(targetStr);
+        if (!slug || parsed.slug === slug) {
+          currentStore = Object.assign({}, defaultStore, parsed);
+          currentStore.slug = currentStore.slug || parsed.slug || slug;
+          loaded = true;
+        }
+      }
+    } catch(e) {}
+  }
+
+  window.activeStoreData = currentStore;
+  await renderStore(currentStore);
+}
+
+const escapeHTMLStore = val => String(val ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+
+async function renderStore(store) {
+  document.getElementById('storePageTitle').textContent = store.name + ' - متجر إلكتروني';
+  document.getElementById('storeTitle').textContent = store.name;
+  if (document.getElementById('navStoreName')) {
+    document.getElementById('navStoreName').textContent = store.name;
+  }
+  document.getElementById('storeTagline').textContent = store.tagline || 'مرحباً بكم في متجرنا';
+  document.getElementById('storeCurrencyBadge').textContent = 'العملة: ' + store.currency;
+  document.getElementById('storeWaBtn').href = 'https://wa.me/' + (store.whatsapp || '').replace(/[^0-9]/g, '');
+
+  const navBadge = document.getElementById('navStoreBadge');
+  if (store.logo) {
+    document.getElementById('storeAvatar').style.backgroundImage = `url("${store.logo}")`;
+    document.getElementById('storeAvatar').textContent = '';
+    if (navBadge) {
+      navBadge.innerHTML = `<img src="${store.logo}" alt="${escapeHTMLStore(store.name)}">`;
+    }
+  } else {
+    const initial = store.name ? store.name.charAt(0).toUpperCase() : '🛍️';
+    document.getElementById('storeAvatar').textContent = initial;
+    if (navBadge) {
+      navBadge.textContent = initial;
+    }
+  }
+
+  if (store.cover) {
+    document.getElementById('storeCoverBanner').style.backgroundImage = `url("${store.cover}")`;
+  }
+
+  // فحص حالة المتجر: إذا كانت pending يتم حجب المتجر وعرض رسالة الزوار
+  const isPending = (store.status === 'pending');
+  const storeBody = document.getElementById('storeMainBody');
+  const pendingGate = document.getElementById('storePendingGate');
+  const storeActions = document.querySelector('.store-actions');
+
+  if (isPending) {
+    if (storeBody) storeBody.style.display = 'none';
+    if (storeActions) storeActions.style.display = 'none';
+    if (pendingGate) {
+      document.getElementById('pendingStoreName').textContent = store.name;
+      pendingGate.style.display = 'block';
+    }
+    return; // إيقاف عرض المنتجات ومنع الطلبات
+  } else {
+    if (storeBody) storeBody.style.display = 'block';
+    if (storeActions) storeActions.style.display = 'flex';
+    if (pendingGate) pendingGate.style.display = 'none';
+  }
+
+  // قائمة المنتجات الافتراضية (تُستخدم كاحتياط فقط إذا لم توجد منتجات في Firestore)
+  const defaultProducts = [
+    { id: 'p1', name: 'فستان كاجوال صيفي موديل 2026', category: 'ملابس حريمي', price: 350, oldPrice: 450, icon: '👗' },
+    { id: 'p2', name: 'قميص كتان بيج أنيق', category: 'ملابس رجالي', price: 290, oldPrice: 380, icon: '👔' },
+    { id: 'p3', name: 'حذاء رياضي مريح للجري', category: 'أحذية', price: 420, oldPrice: 550, icon: '👟' },
+    { id: 'p4', name: 'ساعة يد كلاسيكية أنيقة', category: 'إكسسوارات', price: 550, oldPrice: 700, icon: '⌚' }
+  ];
+
+  const grid = document.getElementById('productsGrid');
+
+  window.storeProductsMap = {};
+  window.openCheckoutById = function(id) {
+    const p = window.storeProductsMap[id];
+    if (p) openCheckout(p.name, p.finalPrice || p.price);
+  };
+
+  // محاولة جلب المنتجات المفعلة من Firestore
+  if (db && store.slug) {
+    try {
+      const prodCol = collection(db, 'stores', store.slug, 'products');
+      const prodSnap = await getDocs(query(prodCol, where('isActive', '==', true)));
+      if (!prodSnap.empty) {
+        const firestoreProds = prodSnap.docs.map(d => ({ ...d.data(), _firestoreId: d.id }));
+        if (grid) grid.innerHTML = firestoreProds.map(p => {
+          const pid = p._firestoreId || p.id;
+          window.storeProductsMap[pid] = p;
+          const imgTag = p.image
+            ? `<img src="${escapeHTMLStore(p.image)}" alt="${escapeHTMLStore(p.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">`
+            : `<div style="font-size:42px;line-height:1;">🛍️</div>`;
+          const oldPriceTag = p.price && p.finalPrice < p.price
+            ? `<span class="old-price">${p.price} ${store.currency}</span>`
+            : '';
+          return `
+          <div class="product-card">
+            <div class="product-img">${imgTag}</div>
+            <div class="product-info">
+              <span class="product-category">${escapeHTMLStore(p.category)}</span>
+              <h3 class="product-name">${escapeHTMLStore(p.name)}</h3>
+              ${p.description ? `<p style="font-size:12.5px;color:#64748b;margin:4px 0 6px;line-height:1.45;">${escapeHTMLStore(p.description.substring(0,80))}${p.description.length>80?'…':''}</p>` : ''}
+              <div class="product-pricing">
+                <span class="current-price">${(p.finalPrice || p.price)} ${store.currency}</span>
+                ${oldPriceTag}
+              </div>
+              ${p.stock === 0 ? `<p style="color:#ef4444;font-size:12px;font-weight:600;margin:4px 0 0;">نفذت الكمية</p>` : ''}
+              <button type="button" class="btn-order-now" ${p.stock === 0 ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''} onclick="openCheckoutById('${pid}')">
+                اطلب الآن عبر واتساب
+              </button>
+            </div>
+          </div>`;
+        }).join('');
+        return; // منتجات Firestore تم عرضها بنجاح
+      }
+    } catch(err) {
+      console.warn('Firestore products fetch err:', err);
+    }
+  }
+
+  // احتياط: عرض المنتجات الافتراضية
+  if (grid) {
+    defaultProducts.forEach(p => { window.storeProductsMap[p.id] = p; });
+    grid.innerHTML = defaultProducts.map(p => `
+      <div class="product-card">
+        <div class="product-img">${p.icon}</div>
+        <div class="product-info">
+          <span class="product-category">${p.category}</span>
+          <h3 class="product-name">${p.name}</h3>
+          <div class="product-pricing">
+            <span class="current-price">${p.price} ${store.currency}</span>
+            <span class="old-price">${p.oldPrice} ${store.currency}</span>
+          </div>
+          <button type="button" class="btn-order-now" onclick="openCheckoutById('${p.id}')">
+            اطلب الآن عبر واتساب
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+let selectedProduct = null;
+window.openCheckout = function(name, price) {
+  const store = window.activeStoreData || defaultStore;
+  selectedProduct = { name, price };
+  document.getElementById('checkoutProdTitle').textContent = 'طلب: ' + name;
+  document.getElementById('sumProdPrice').textContent = price + ' ' + store.currency;
+  document.getElementById('sumShipping').textContent = (store.shippingFee || 0) + ' ' + store.currency;
+  document.getElementById('sumTotal').textContent = (price + (store.shippingFee || 0)) + ' ' + store.currency;
+  document.getElementById('checkoutModal').classList.add('active');
+};
+
+window.closeCheckout = function() {
+  document.getElementById('checkoutModal').classList.remove('active');
+};
+
+window.handleConfirmOrder = async function(e) {
+  e.preventDefault();
+  const store = window.activeStoreData || defaultStore;
+  const cName = document.getElementById('custName').value.trim();
+  const cPhone = document.getElementById('custPhone').value.trim();
+  const cAddr = document.getElementById('custAddress').value.trim();
+  const orderNum = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+  const total = selectedProduct.price + (store.shippingFee || 0);
+
+  const orderRecord = {
+    id: orderNum,
+    trackingNumber: orderNum,
+    storeName: store.name || '',
+    storeSlug: store.slug || '',
+    customerName: cName,
+    customerPhone: cPhone,
+    address: cAddr,
+    productName: selectedProduct.name,
+    totalAmount: total,
+    status: 'قيد التجهيز',
+    createdAt: new Date().toISOString()
+  };
+
+  // حفظ الطلب محلياً ليتزامن مع dashboard.html
+  try {
+    const orders = JSON.parse(localStorage.getItem('daghta_orders') || '[]');
+    orders.unshift(orderRecord);
+    localStorage.setItem('daghta_orders', JSON.stringify(orders));
+  } catch(err) {}
+
+  // حفظ الطلب مركزياً في Firestore للوحة تحكم الإدارة والتجار
+  if (db) {
+    try {
+      await addDoc(collection(db, 'orders'), orderRecord);
+    } catch(fbErr) {
+      console.warn("Firestore order save:", fbErr);
+    }
+  }
+
+  // إرسال رسالة واتساب للتاجر
+  const msg = `مرحباً ${store.name}، لدي طلب جديد من متجركم:\n\n📦 المنتج: ${selectedProduct.name}\n💰 الإجمالي: ${total} ${store.currency} (شامل الشحن)\n\n👤 اسم العميل: ${cName}\n📱 الهاتف: ${cPhone}\n📍 العنوان: ${cAddr}\n🔖 رقم الطلب: ${orderNum}`;
+  const waUrl = `https://wa.me/${(store.whatsapp || '').replace(/[^0-9]/g, '')}?text=${encodeURIComponent(msg)}`;
+
+  closeCheckout();
+  alert(`تم تأكيد طلبك بنجاح! رقم تتبع طلبك هو: ${orderNum}\nسيتم فتح محادثة الواتساب الآن.`);
+  window.open(waUrl, '_blank');
+};
+
+// تتبع الطلبات
+window.openTrackModal = function() { document.getElementById('trackModal').classList.add('active'); };
+window.closeTrackModal = function() { document.getElementById('trackModal').classList.remove('active'); };
+
+window.searchTrackOrder = function() {
+  const code = document.getElementById('trackInput').value.trim().toUpperCase();
+  const res = document.getElementById('trackResult');
+  res.style.display = 'block';
+
+  try {
+    const orders = JSON.parse(localStorage.getItem('daghta_orders') || '[]');
+    const found = orders.find(o => (o.trackingNumber || o.id) === code);
+    if (found) {
+      res.innerHTML = `<strong>الطلب: ${found.trackingNumber}</strong><br>المنتج: ${found.productName}<br>الحالة: <span style="color:#0f9d6b;font-weight:bold">${found.status || 'قيد التجهيز'}</span>`;
+      return;
+    }
+  } catch(e) {}
+
+  res.innerHTML = `الطلب رقم <strong>${code}</strong> قيد التجهيز وسيتم شحنه قريباً.`;
+};
+
+// عربة التسوق
+window.openCartQuickView = function() {
+  alert("سلة التسوق الخاصة بك:\nاضغط على 'اطلب الآن عبر واتساب' أسفل أي منتج لإتمام طلبك مباشرة وتأكيده مع المتجر.");
+};
+
+// تشغيل التهيئة
+initStore();
+</script>
+
+</body>
+</html>

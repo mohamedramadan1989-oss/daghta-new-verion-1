@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>خطط وباقات الاشتراك - منصة ضغطة (Daghta)</title>
+<meta name="description" content="اختر باقة الاشتراك المناسبة لمتجرك الإلكتروني مع منصة ضغطة. أسعار شفافة، عمولات منخفضة، وتجربة مجانية لمدة 60 يوماً.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e1f3b;
+  --navy: #12386f;
+  --navy-dark: #091528;
+  --brand: #0878f9;
+  --brand-hover: #0665d1;
+  --brand-light: #eaf3ff;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --line: #e2e8f0;
+  --muted: #64748b;
+  --subtext: #475569;
+  --emerald: #10b981;
+  --emerald-bg: #ecfdf5;
+  --amber: #f59e0b;
+  --amber-bg: #fffbeb;
+  --shadow-sm: 0 2px 8px rgba(14,31,59,0.04);
+  --shadow-md: 0 10px 28px rgba(14,31,59,0.08);
+  --shadow-lg: 0 20px 45px rgba(14,31,59,0.12);
+  --kufi: 'Noto Kufi Arabic','IBM Plex Sans Arabic',sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'IBM Plex Sans Arabic', sans-serif; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); line-height: 1.65; font-size: 15px; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: inherit; text-decoration: none; }
+
+/* === Navbar === */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--ink); color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 6%;
+  box-shadow: 0 4px 20px rgba(10,22,40,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-height: 68px;
+}
+.nav-brand-box {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none;
+  padding: 2px 0;
+  overflow: visible;
+}
+.navbar .logo img, .nav-logo img, .exact-logo-img, header img[src*="Daghta"], nav img[src*="Daghta"] {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+.nav-links { display: flex; list-style: none; gap: 24px; align-items: center; }
+.nav-links a { font-size: 14.5px; font-weight: 500; color: #cbd5e1; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; font-weight: 600; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn-login { color: #fff; padding: 8px 16px; border-radius: 10px; font-weight: 600; font-size: 13.5px; border: 1px solid rgba(255,255,255,0.2); transition: background .15s; }
+.btn-login:hover { background: rgba(255,255,255,0.1); }
+.btn-cta { background: var(--brand); color: #fff; padding: 9px 20px; border-radius: 10px; font-weight: 700; font-size: 13.5px; transition: background .15s; box-shadow: 0 4px 14px rgba(8,120,249,0.3); }
+.btn-cta:hover { background: var(--brand-hover); }
+
+/* === Hero Section === */
+.pricing-hero {
+  background: radial-gradient(800px 400px at 50% 0, rgba(8,120,249,0.2), transparent 75%), linear-gradient(175deg, var(--ink), var(--navy));
+  color: #fff;
+  text-align: center;
+  padding: 64px 6% 80px;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(8,120,249,0.2); border: 1px solid rgba(8,120,249,0.4);
+  color: #93c5fd; padding: 6px 16px; border-radius: 30px;
+  font-size: 13px; font-weight: 600; margin-bottom: 20px;
+}
+.pricing-hero h1 { font: 700 clamp(28px, 4.5vw, 42px)/1.3 var(--kufi); max-width: 780px; margin: 0 auto 16px; }
+.pricing-hero p { font-size: clamp(15px, 2vw, 17px); color: #94a3b8; max-width: 620px; margin: 0 auto 32px; }
+
+/* === Billing Switcher === */
+.billing-switcher-wrap {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.1); padding: 5px;
+  border-radius: 30px; border: 1px solid rgba(255,255,255,0.15);
+}
+.switch-btn {
+  background: transparent; border: 0; color: #cbd5e1;
+  padding: 8px 22px; border-radius: 25px;
+  font-size: 14px; font-weight: 600; cursor: pointer; transition: all .2s;
+}
+.switch-btn.active {
+  background: var(--brand); color: #fff; font-weight: 700;
+  box-shadow: 0 2px 10px rgba(8,120,249,0.4);
+}
+.discount-pill {
+  background: var(--emerald-bg); color: var(--emerald);
+  font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px;
+}
+
+/* === Plans Grid Container === */
+.plans-section {
+  max-width: 1180px; margin: -50px auto 70px; padding: 0 5%;
+  position: relative; z-index: 10;
+}
+.plans-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 980px) {
+  .plans-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+}
+
+/* === Plan Card === */
+.plan-card {
+  background: var(--card); border: 2px solid var(--line);
+  border-radius: 24px; padding: 34px 28px;
+  display: flex; flex-direction: column; gap: 20px;
+  box-shadow: var(--shadow-md); position: relative;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.plan-card.featured {
+  border-color: var(--brand);
+  box-shadow: 0 16px 40px rgba(8,120,249,0.16);
+  background: #ffffff;
+}
+.plan-tag {
+  position: absolute; top: -14px; inset-inline-end: 24px;
+  background: var(--brand); color: #fff;
+  padding: 5px 16px; border-radius: 20px;
+  font-size: 12px; font-weight: 700;
+  box-shadow: 0 4px 12px rgba(8,120,249,0.3);
+}
+.plan-tag.gold { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.plan-tag.muted { background: var(--muted); }
+
+.plan-header h3 { font: 700 22px var(--kufi); color: var(--ink); margin-bottom: 6px; }
+.plan-header p { font-size: 13.5px; color: var(--muted); min-height: 40px; }
+
+.plan-pricing-box {
+  display: flex; align-items: baseline; gap: 6px;
+  padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.plan-price-num { font: 700 38px/1 var(--kufi); color: var(--ink); }
+.plan-price-period { font-size: 14px; color: var(--muted); font-weight: 500; }
+
+.plan-commission-banner {
+  background: var(--brand-light); border-radius: 10px;
+  padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;
+}
+.plan-commission-banner span { font-size: 13px; color: var(--brand-hover); font-weight: 600; }
+.plan-commission-banner strong { font-size: 15px; color: var(--ink); font-weight: 700; }
+
+.plan-features-list { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.plan-features-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--subtext); }
+.plan-features-list li svg { width: 17px; height: 17px; color: var(--emerald); flex: none; }
+
+.btn-plan-cta {
+  width: 100%; padding: 13px; border-radius: 12px;
+  font-size: 15px; font-weight: 700; text-align: center;
+  border: 0; cursor: pointer; transition: all .2s;
+  display: block; margin-top: auto;
+}
+.btn-plan-cta.primary { background: var(--brand); color: #fff; box-shadow: 0 4px 14px rgba(8,120,249,0.3); }
+.btn-plan-cta.primary:hover { background: var(--brand-hover); }
+.btn-plan-cta.secondary { background: #f1f5f9; color: var(--ink); border: 1.5px solid var(--line); }
+.btn-plan-cta.secondary:hover { background: #e2e8f0; }
+.btn-plan-cta.gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+
+/* === FAQ Section === */
+.pricing-faq { max-width: 820px; margin: 40px auto 80px; padding: 0 5%; }
+.faq-head { text-align: center; margin-bottom: 36px; }
+.faq-head h2 { font: 700 28px var(--kufi); color: var(--ink); margin-bottom: 8px; }
+.faq-head p { color: var(--muted); font-size: 15px; }
+
+.faq-item {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  transition: border-color .2s;
+}
+.faq-question {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px; font-weight: 700; font-size: 15px; cursor: pointer;
+}
+.faq-icon { font-size: 20px; color: var(--brand); transition: transform .2s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { display: none; padding: 0 22px 20px; font-size: 14.5px; color: var(--muted); line-height: 1.7; }
+.faq-item.open .faq-answer { display: block; }
+
+/* === Footer === */
+.footer { background: var(--ink); color: #fff; padding: 48px 6% 32px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: auto; }
+.footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-logo { height: 28px !important; width: auto !important; object-fit: contain; }
+.footer-links { display: flex; gap: 20px; list-style: none; font-size: 13.5px; color: #94a3b8; }
+.footer-links a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand-box" aria-label="Daghta">
+    <img src="Daghta_ar_white.png" class="exact-logo-img" alt="Daghta Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="index.html#features">المميزات</a></li>
+    <li><a href="index.html#how">كيف نعمل؟</a></li>
+    <li><a href="pricing.html" class="active">الأسعار والباقات</a></li>
+    <li><a href="contact.html">اتصل بنا</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="login.html" class="btn-login">تسجيل الدخول</a>
+    <a href="create_ar.html" class="btn-cta">ابدأ مجاناً 👈</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pricing-hero">
+  <div class="hero-badge">🎁 تجربة مجانية كاملة لمدة 60 يوماً لجميع التجار</div>
+  <h1>خطط تسعير مرنة تناسب حجم تجارتك</h1>
+  <p>ابدأ مجاناً اليوم واستقبل أول طلباتك في دقائق. لا توجد مصاريف خفية، ويمكنك الترقية أو الإلغاء في أي وقت.</p>
+
+  <!-- Billing Switcher -->
+  <div class="billing-switcher-wrap">
+    <button class="switch-btn active" id="btnMonthly" onclick="setBillingCycle('monthly')">الدفع الشهري</button>
+    <button class="switch-btn" id="btnYearly" onclick="setBillingCycle('yearly')">
+      الدفع السنوي <span class="discount-pill">وفر 20%</span>
+    </button>
+  </div>
+</section>
+
+<!-- Plans Grid Section -->
+<section class="plans-section">
+  <div class="plans-grid" id="pricingPlansGrid">
+    <!-- يتم بناء الكروت لحظياً وديناميكياً من Firestore -->
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="pricing-faq">
+  <div class="faq-head">
+    <h2>الأسئلة الشائعة حول الباقات</h2>
+    <p>كل ما تحتاج معرفته عن تجربة المنصة والدفع والترقية</p>
+  </div>
+
+  <div class="faq-item open">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>كيف تعمل التجربة المجانية (60 يوماً)؟</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      بمجرد إنشاء متجرك الجديد في منصة ضغطة، يتم تفعيل باقة التجربة المجانية تلقائياً لمدة شهرين كاملين (60 يوماً) بدون دفع أي رسوم وبدون الحاجة لبطاقة ائتمانية. يمكنك إضافة منتجاتك واستقبال طلبات حقيقية من عملائك مباشرة.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>كيف يتم احتساب نسبة عمولة المنصة؟</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      عمولة المنصة تقتطع فقط من المبيعات الناجحة التي تتم عبر متجرك، وتختلف نسبتها حسب باقتك المختارة (تبدأ من 0% للتجربة، و2% للباقة الاحترافية، و1% فقط لباقة الشركات VIP). لا توجد أي عمولات على الطلبات غير المكتملة.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>هل يمكنني ترقية أو تخفيض باقتي لاحقاً؟</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      نعم بكل تأكيد، يمكنك الترقية إلى باقة أعلى في أي وقت من لوحة تحكم التاجر للاستفادة فوراً من منتجات غير محدودة والدومين المخصص والدعم السريع.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>ما هي طرق الدفع المتاحة لتجديد الاشتراك؟</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      نوفر كافة طرق الدفع المحلية المعتمدة في مصر والوطن العربي: فودافون كاش، المحافظ الإلكترونية، بطاقات ميزة، فيزا، وماستركارد، بالإضافة للتحويل البنكي المباشر.
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Daghta_ar_white.png" class="footer-logo" alt="Daghta">
+      <span style="font-size:13.5px;color:#94a3b8">© 2026 منصة ضغطة للتجارة الإلكترونية السريعة. جميع الحقوق محفوظة.</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="terms.html">الشروط والأحكام</a></li>
+      <li><a href="privacy.html">سياسة الخصوصية</a></li>
+      <li><a href="contact.html">اتصل بنا والمساعدة</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Dynamic Pricing Script with Firebase Firestore Integration -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDmsyy5hZmES8q11bkJlmO9WZ5wght8Z04",
+  authDomain: "daghta-5ec61.firebaseapp.com",
+  projectId: "daghta-5ec61",
+  storageBucket: "daghta-5ec61.firebasestorage.app",
+  messagingSenderId: "496395341194",
+  appId: "1:496395341194:web:b00139eb31c40ca2f30c73"
+};
+
+const DEFAULT_PLANS = [
+  {
+    id: 'starter',
+    name: 'التجربة المجانية',
+    badge: 'ابدأ مجاناً',
+    priceMonthly: 0,
+    priceYearly: 0,
+    commissionPercent: 0,
+    maxProducts: '20 منتج',
+    features: [
+      'حتى 20 منتج في المتجر',
+      'استقبال الطلبات الفورية عبر واتساب',
+      'لوحة تحكم أساسية لإدارة الطلبات',
+      'رابط متجر فرعي سريع وفعال',
+      'دعم العملاء القياسي'
+    ],
+    isActive: true,
+    isFeatured: false
+  },
+  {
+    id: 'pro',
+    name: 'باقة التاجر المحترف',
+    badge: 'الأكثر طلباً 🔥',
+    priceMonthly: 299,
+    priceYearly: 2870,
+    commissionPercent: 2,
+    maxProducts: 'غير محدود',
+    features: [
+      'منتجات غير محدودة',
+      'نسبة عمولة منخفضة 2% فقط',
+      'تتبع طلبات متقدم للعملاء',
+      'ربط دومين مخصص (YourBrand.com)',
+      'إحصائيات مبيعات وأرباح فورية ومتقدمة',
+      'دعم فني سريع وأولوية عبر واتساب'
+    ],
+    isActive: true,
+    isFeatured: true
+  },
+  {
+    id: 'vip',
+    name: 'باقة الشركات VIP',
+    badge: 'كبار التجار',
+    priceMonthly: 599,
+    priceYearly: 5750,
+    commissionPercent: 1,
+    maxProducts: 'غير محدود',
+    features: [
+      'كل مميزات باقة المحترف',
+      'أقل نسبة عمولة 1% فقط',
+      'فريق دعم ومدير حساب مخصص 24/7',
+      'تكامل بوابات الدفع الإلكتروني',
+      'ربط شركات الشحن والتوصيل',
+      'تقارير محاسبية وتحليلات تفصيلية'
+    ],
+    isActive: true,
+    isFeatured: false
+  }
+];
+
+let currentBilling = 'monthly';
+let loadedPlans = DEFAULT_PLANS;
+
+window.setBillingCycle = function(cycle) {
+  currentBilling = cycle;
+  document.getElementById('btnMonthly').classList.toggle('active', cycle === 'monthly');
+  document.getElementById('btnYearly').classList.toggle('active', cycle === 'yearly');
+  renderPlans(loadedPlans);
+};
+
+function renderPlans(plans) {
+  const container = document.getElementById('pricingPlansGrid');
+  const activePlans = plans.filter(p => p.isActive !== false);
+
+  container.innerHTML = activePlans.map(plan => {
+    const isYearly = currentBilling === 'yearly';
+    const price = isYearly ? plan.priceYearly : plan.priceMonthly;
+    const periodText = plan.priceMonthly === 0 ? 'لكل 60 يوماً' : (isYearly ? '/ سنوياً' : '/ شهرياً');
+    const isFeat = plan.isFeatured === true;
+    const badgeText = plan.badge || (isFeat ? 'الأكثر طلباً 🔥' : '');
+    const badgeHtml = badgeText ? `<span class="plan-tag ${isFeat ? '' : 'muted'}">${badgeText}</span>` : '';
+
+    const featsHtml = (plan.features || []).map(f => `
+      <li>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+        <span>${f}</span>
+      </li>
+    `).join('');
+
+    const ctaText = plan.priceMonthly === 0 ? 'ابدأ تجربتك المجانية' : (isFeat ? 'اشترك في باقة المحترف' : 'طلب باقة الشركات');
+    const ctaClass = isFeat ? 'primary' : (plan.priceMonthly === 0 ? 'secondary' : 'gold');
+    const ctaLink = plan.priceMonthly === 0 ? 'create_ar.html' : `https://wa.me/201012345678?text=${encodeURIComponent('مرحباً، أود الاشتراك في ' + plan.name + ' على منصة ضغطة')}`;
+
+    return `
+      <div class="plan-card ${isFeat ? 'featured' : ''}">
+        ${badgeHtml}
+        <div class="plan-header">
+          <h3>${plan.name}</h3>
+          <p>الحد الأقصى للمنتجات: <strong>${plan.maxProducts || 'غير محدود'}</strong></p>
+        </div>
+
+        <div class="plan-pricing-box">
+          <span class="plan-price-num">${price}</span>
+          <span style="font-size:16px;font-weight:700">ج.م</span>
+          <span class="plan-price-period">${periodText}</span>
+        </div>
+
+        <div class="plan-commission-banner">
+          <span>عمولة المنصة:</span>
+          <strong>${plan.commissionPercent}% فقط</strong>
+        </div>
+
+        <ul class="plan-features-list">
+          ${featsHtml}
+        </ul>
+
+        <a href="${ctaLink}" ${plan.priceMonthly !== 0 ? 'target="_blank"' : ''} class="btn-plan-cta ${ctaClass}">
+          ${ctaText}
+        </a>
+      </div>
+    `;
+  }).join('');
+}
+
+// Initial render with defaults immediately for instant UX
+renderPlans(DEFAULT_PLANS);
+
+// Fetch dynamic plans from Firestore
+async function fetchCentralPlans() {
+  try {
+    const app = initializeApp(firebaseConfig, 'public-pricing-app');
+    const db = getFirestore(app);
+    const snap = await getDoc(doc(db, 'platform_settings', 'pricing_plans'));
+    if (snap.exists() && snap.data().plans && Array.isArray(snap.data().plans) && snap.data().plans.length) {
+      loadedPlans = snap.data().plans;
+      renderPlans(loadedPlans);
+    }
+  } catch(e) {
+    console.debug('Using fallback static plans:', e);
+  }
+}
+fetchCentralPlans();
+
+window.toggleFaq = function(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+};
+</script>
+
+</body>
+</html>

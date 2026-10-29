@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1f3b">
+<title id="pageTitle" data-ar="إنشاء متجرك الإلكتروني - Daghta | ضغطة" data-en="Create Your Store - Daghta">إنشاء متجرك الإلكتروني - Daghta | ضغطة</title>
+<meta name="description" content="أنشئ متجرك الإلكتروني في أقل من دقيقة وابدأ في استقبال الطلبات فوراً مع منصة ضغطة (Daghta).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e1f3b;
+  --navy: #12386f;
+  --navy-dark: #091528;
+  --brand: #0878f9;
+  --brand-hover: #0665d1;
+  --brand-light: #eaf3ff;
+  --brand-glow: rgba(8, 120, 249, 0.16);
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --line: #e2e8f0;
+  --line-focus: #0878f9;
+  --muted: #64748b;
+  --subtext: #475569;
+  --err: #d92d20;
+  --err-bg: #fef3f2;
+  --err-border: #fecdca;
+  --ok: #0f9d6b;
+  --ok-bg: #effaf5;
+  --ok-border: #b7e8d3;
+  --wa: #25d366;
+  --shadow-sm: 0 2px 8px rgba(14, 31, 59, 0.04);
+  --shadow-md: 0 10px 28px rgba(14, 31, 59, 0.07);
+  --shadow-lg: 0 20px 45px rgba(14, 31, 59, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.ic {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  vertical-align: -0.2em;
+}
+
+/* ==================== شريط التنقل الموحد (Unified Navbar) ==================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 6%;
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 68px;
+}
+
+/* ضبط حجم الشعار ومعالجة الهوامش الشفافة ليظهر كبيراً وواضحاً */
+.nav-brand {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none;
+  padding: 2px 0;
+  overflow: visible;
+  max-height: none;
+}
+
+.navbar .logo img,
+.nav-logo img,
+.logo img,
+.nav-logo,
+header img[src*="Daghta"],
+nav img[src*="Daghta"] {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo.en-logo, html[dir="ltr"] .nav-logo {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  margin: 0;
+  object-fit: contain !important;
+}
+
+.nav-brand:hover .nav-logo {
+  transform: scale(1.03);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-nav-login {
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.btn-nav-login:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+.btn-nav-cta {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 6px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(8, 120, 249, 0.35);
+}
+
+.btn-nav-cta:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* ==================== الهيرو الترحيبي ==================== */
+.hero-create {
+  background: radial-gradient(1000px 480px at 80% -10%, rgba(8, 120, 249, 0.4), transparent 70%),
+              radial-gradient(600px 300px at 10% 100%, rgba(18, 56, 111, 0.6), transparent 70%),
+              linear-gradient(165deg, var(--navy-dark) 0%, var(--ink) 50%, var(--navy) 100%);
+  color: #fff;
+  padding: 44px 6% 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-create-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  margin-bottom: 12px;
+  color: #cde4ff;
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.hero-create h1 {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.hero-create p {
+  font-size: clamp(14.5px, 2vw, 16.5px);
+  color: #dbe7f6;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==================== الحاوية الرئيسية (Main Wrapper) ==================== */
+.create-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: -40px auto 48px;
+  padding: 0 6%;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 28px;
+  position: relative;
+  z-index: 5;
+  flex: 1;
+}
+
+/* ==================== شريط الخطوات (Multi-step Tabs) ==================== */
+.steps-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #e9eff8;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.step-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: transparent;
+  border: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step-tab.active {
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 2px 8px rgba(14, 31, 59, 0.08);
+}
+
+.step-tab.active .step-num {
+  background: var(--brand);
+  color: #fff;
+}
+
+.step-tab.completed {
+  color: var(--ok);
+}
+
+.step-tab.completed .step-num {
+  background: var(--ok);
+  color: #fff;
+}
+
+/* ==================== بطاقة النموذج الرئيسية ==================== */
+.form-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.step-header {
+  margin-bottom: 20px;
+}
+
+.step-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-header p {
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-top: 4px;
+}
+
+.step-content {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.step-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* الحقول والمدخلات */
+.f-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.col-full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.field label .req {
+  color: var(--err);
+}
+
+.input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-box .field-ic {
+  position: absolute;
+  inset-inline-start: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  padding-inline-start: 42px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fbfcfe;
+  color: var(--ink);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--brand);
+  background: #fff;
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+.field input:focus ~ .field-ic,
+.field select:focus ~ .field-ic {
+  color: var(--brand);
+}
+
+/* Slug URL Input */
+.slug-wrap {
+  display: flex;
+  direction: ltr;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.slug-wrap:focus-within {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+.slug-domain {
+  background: #f1f5f9;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  border-inline-end: 1px solid var(--line);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.slug-wrap input {
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding-inline-start: 12px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  direction: ltr;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.field-err-msg {
+  display: none;
+  font-size: 12px;
+  color: var(--err);
+  margin-top: 4px;
+  font-weight: 500;
+  align-items: center;
+  gap: 4px;
+}
+
+.field.has-err input,
+.field.has-err .slug-wrap {
+  border-color: var(--err) !important;
+  background: #fffafa;
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.12) !important;
+}
+
+.field.has-err .field-err-msg {
+  display: flex;
+}
+
+/* رفع الصور المصغرة */
+.upload-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.upload-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--brand-light) center/cover no-repeat;
+  border: 2px dashed #9bbcf0;
+  display: grid;
+  place-items: center;
+  color: var(--brand);
+  font-size: 20px;
+  font-weight: 700;
+  flex: none;
+}
+
+.upload-thumb.cover-thumb {
+  width: 140px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+.btn-upload-file {
+  min-height: 42px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-upload-file:hover {
+  background: var(--bg);
+  border-color: #cbd5e1;
+}
+
+.file-input-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* أزرار التنقل بين الخطوات */
+.steps-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.btn-step-prev {
+  background: #f1f5f9;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  min-height: 48px;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-step-prev:hover {
+  background: #e2e8f0;
+}
+
+.btn-step-next,
+.btn-step-submit {
+  background: linear-gradient(135deg, var(--brand) 0%, #0566d5 100%);
+  color: #fff;
+  border: 0;
+  min-height: 48px;
+  padding: 10px 28px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(8, 120, 249, 0.3);
+  transition: all 0.2s ease;
+  margin-inline-start: auto;
+}
+
+.btn-step-next:hover,
+.btn-step-submit:hover {
+  background: linear-gradient(135deg, #097df9 0%, #035bbd 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(8, 120, 249, 0.4);
+}
+
+.btn-step-submit.is-busy {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.btn-step-submit.is-busy .btn-spinner {
+  display: block;
+}
+
+.btn-step-submit.is-busy .btn-text-content {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== المعاينة المباشرة (Live Store Preview) ==================== */
+.preview-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.live-preview-card {
+  position: sticky;
+  top: 86px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.pv-header {
+  padding: 12px 18px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ok);
+  font-size: 12px;
+}
+
+.pv-badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+}
+
+.pv-banner {
+  height: 110px;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--brand) 100%) center/cover no-repeat;
+  position: relative;
+}
+
+.pv-content {
+  padding: 0 18px 20px;
+  position: relative;
+}
+
+.pv-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3.5px solid #fff;
+  background: var(--brand) center/cover no-repeat;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: -32px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(14, 31, 59, 0.12);
+}
+
+.pv-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.pv-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+  min-height: 1.5em;
+}
+
+.pv-product-sample {
+  margin-top: 14px;
+  background: #fbfcfe;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pv-product-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #dbeafe;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex: none;
+}
+
+.pv-product-info b {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.pv-product-info span {
+  font-size: 13px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.pv-order-btn {
+  margin-top: 12px;
+  background: var(--brand);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: block;
+}
+
+/* ==================== شاشة النجاح التفاعلية (Done Screen) ==================== */
+.done-container {
+  display: none;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 44px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  max-width: 680px;
+  margin: -30px auto 48px;
+  position: relative;
+  z-index: 5;
+  animation: zoomIn 0.35s ease;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.done-icon-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--ok-bg);
+  color: var(--ok);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border: 2px solid var(--ok-border);
+  box-shadow: 0 10px 28px rgba(15, 157, 107, 0.2);
+}
+
+.done-icon-box .ic {
+  width: 44px;
+  height: 44px;
+  stroke-width: 2.5;
+}
+
+.done-container h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.done-container p {
+  color: var(--subtext);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 22px;
+}
+
+.done-link-box {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.done-link-box code {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-copy-code {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  flex: none;
+}
+
+.btn-copy-code:hover {
+  background: var(--brand-hover);
+}
+
+/* شريط التوجيه التلقائي للوحة التحكم */
+.redirect-bar {
+  background: var(--brand-light);
+  border: 1px solid rgba(8, 120, 249, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin: 0 auto 24px;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.redirect-progress {
+  height: 4px;
+  background: rgba(8, 120, 249, 0.2);
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.redirect-progress-inner {
+  height: 100%;
+  width: 0%;
+  background: var(--brand);
+  transition: width 3s linear;
+}
+
+.done-actions-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-dash-now {
+  background: var(--brand);
+  color: #fff;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-dash-now:hover {
+  background: var(--brand-hover);
+}
+
+.btn-view-store {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-view-store:hover {
+  background: var(--bg);
+}
+
+/* ==================== الفوتر الموحد (Unified Footer) ==================== */
+.page-footer {
+  background: var(--ink);
+  color: #94a3b8;
+  padding: 28px 6% calc(28px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13.5px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+}
+
+html[dir="ltr"] .footer-logo, .footer-logo.en-logo {
+  height: 34px;
+  width: auto;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ==================== التجاوب (Responsive) ==================== */
+@media (max-width: 960px) {
+  .create-container {
+    grid-template-columns: 1fr;
+    margin-top: -24px;
+    gap: 20px;
+  }
+  .preview-col {
+    order: -1;
+  }
+  .live-preview-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: 60px;
+    padding: 8px 5%;
+  }
+  .nav-brand {
+    padding: 2px 0;
+  }
+  .nav-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  .nav-logo.en-logo, html[dir="ltr"] .nav-logo {
+    height: 36px !important;
+    width: auto !important;
+    margin: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: grid;
+  }
+  body.mobile-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    width: 100%;
+    background: var(--ink);
+    padding: 16px 6%;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  .form-panel {
+    padding: 24px 20px;
+  }
+  .f-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .steps-nav {
+    gap: 4px;
+    padding: 4px;
+  }
+  .step-tab {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-actions .btn-nav-cta {
+    display: none;
+  }
+  .hero-create {
+    padding: 34px 6% 60px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================== نافذة التوثيق الإلزامية لحساب التاجر ==================== */
+.gate-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 31, 59, 0.72);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 18px;
+}
+.gate-modal-overlay.active {
+  display: flex;
+}
+.gate-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  max-height: 94vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 25px 60px rgba(14, 31, 59, 0.25);
+  border: 1.5px solid rgba(8, 120, 249, 0.2);
+  position: relative;
+  animation: gatePopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes gatePopIn {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.gate-card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.gate-shield-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eaf3ff 0%, #dbeafe 100%);
+  border: 2px solid #bfdbfe;
+  display: grid;
+  place-items: center;
+  color: #0878f9;
+  font-size: 28px;
+}
+.gate-shield-icon .ic {
+  width: 32px;
+  height: 32px;
+}
+.gate-card-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0e1f3b;
+  margin-bottom: 6px;
+}
+.gate-card-header p {
+  color: #64748b;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.gate-alert {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+  display: none;
+}
+.gate-alert.err {
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  color: #b42318;
+  display: block;
+}
+.gate-alert.ok {
+  background: #effaf5;
+  border: 1px solid #b7e8d3;
+  color: #027a48;
+  display: block;
+}
+.gate-tabs-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+.gate-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.gate-tab-btn.active {
+  background: #ffffff;
+  color: #0878f9;
+  box-shadow: 0 2px 6px rgba(14, 31, 59, 0.08);
+}
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.gate-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: start;
+}
+.gate-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+.gate-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.gate-input-box input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: all 0.15s ease;
+}
+html[dir="rtl"] .gate-input-box input {
+  padding: 10px 38px 10px 12px;
+}
+.gate-input-box input:focus {
+  outline: none;
+  border-color: #0878f9;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(8, 120, 249, 0.15);
+}
+.gate-input-box .field-ic {
+  position: absolute;
+  inset-inline-start: 12px;
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+.btn-gate-submit {
+  width: 100%;
+  background: #0878f9;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(8, 120, 249, 0.3);
+  transition: all 0.2s ease;
+}
+.btn-gate-submit:hover {
+  background: #0665d1;
+  transform: translateY(-1px);
+}
+.btn-gate-submit.busy {
+  pointer-events: none;
+  opacity: 0.85;
+}
+.btn-gate-submit .btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: gateSpin 0.7s linear infinite;
+}
+.btn-gate-submit.busy .btn-spinner {
+  display: inline-block;
+}
+@keyframes gateSpin {
+  to { transform: rotate(360deg); }
+}
+.gate-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 16px 0 12px;
+}
+.gate-divider::before, .gate-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+.btn-gate-google {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+.btn-gate-google:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+.google-svg {
+  width: 20px;
+  height: 20px;
+}
+.gate-cancel-box {
+  text-align: center;
+  margin-top: 14px;
+}
+.btn-gate-cancel {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+.btn-gate-cancel:hover {
+  color: #0e1f3b;
+}
+
+/* ==================== تحديث شاشة الانتظار (Pending Done Screen) ==================== */
+.status-badge-pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  color: #b45309;
+  padding: 7px 18px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.status-dot-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  animation: pulse-dot 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+@keyframes pulse-dot {
+  to { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+}
+.pending-wait-icon {
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+.wait-icon-symbol {
+  font-size: 38px;
+  animation: pulse-wait 2s infinite ease-in-out;
+}
+@keyframes pulse-wait {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.done-lead-msg {
+  color: #475569;
+  font-size: 15.5px;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 20px;
+}
+.trial-promo-card {
+  background: linear-gradient(135deg, #0b192e 0%, #122b52 100%);
+  border: 1.5px solid #0878f9;
+  border-radius: 16px;
+  padding: 16px 20px;
+  max-width: 540px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: start;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(8, 120, 249, 0.15);
+}
+.trial-promo-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+.trial-promo-text strong {
+  display: block;
+  font-size: 15px;
+  color: #fbbf24;
+  margin-bottom: 2px;
+}
+.trial-promo-text p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.5;
+}
+.public-preview-alert {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  max-width: 540px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #475569;
+  text-align: start;
+}
+.public-preview-alert p {
+  margin: 0;
+}
+
+</style>
+</head>
+<body>
+
+<!-- SVG Icons Definition -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="g-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="g-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="g-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="g-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="g-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="g-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></symbol>
+    <symbol id="g-tag" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></symbol>
+    <symbol id="g-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="g-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+    <symbol id="g-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="g-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="g-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="g-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="g-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-.9-1.4-1.3-2.5-1.3-1.4 0-2.5.7-2.5 1.8s1 1.6 2.5 2 2.5.9 2.5 2-1.1 1.8-2.5 1.8c-1.1 0-2-.4-2.5-1.3M12 6.5v1.7m0 7.6v1.7"/></symbol>
+    <symbol id="g-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="g-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- شريط الملاحة الموحد للموقع -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <a href="index.html" class="nav-brand" aria-label="Daghta Home">
+    <img src="Daghta_ar_white.png" id="headerLogo" class="nav-logo" alt="Daghta Logo" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png">
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+    <li><a href="index.html#how" data-ar="كيف نعمل؟" data-en="How it Works?">كيف نعمل؟</a></li>
+    <li><a href="index.html#features" data-ar="المميزات" data-en="Features">المميزات</a></li>
+    <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
+    <!-- روابط التاجر المسجل: مخفية للزائر غير المسجل -->
+    <li id="navStoreItem" style="display:none"><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+    <li id="navDashboardItem" style="display:none"><a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Change Language">
+      <svg class="ic"><use href="#g-globe"/></svg>
+      <span id="langText">English</span>
+    </button>
+    <a href="login.html" class="btn-nav-login" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</a>
+    <a href="create_ar.html" class="btn-nav-cta active" data-ar="إنشاء متجر 👈" data-en="Create Store 👈">إنشاء متجر 👈</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <svg class="ic"><use href="#g-menu"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- قسم الهيرو التعريفي بالخطوات -->
+<header class="hero-create">
+  <div class="hero-create-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span data-ar="انضم لأكثر من 500+ تاجر في الوطن العربي" data-en="Join over 500+ merchants in the Arab world">انضم لأكثر من 500+ تاجر في الوطن العربي</span>
+    </div>
+    <h1 data-ar="أنشئ متجرك الإلكتروني في أقل من دقيقة 🚀" data-en="Create Your Instant Store in Under a Minute 🚀">أنشئ متجرك الإلكتروني في أقل من دقيقة 🚀</h1>
+    <p data-ar="املأ هذه الخطوات البسيطة، وسيكون رابط متجرك جاهزاً لمشاركته فوراً واستقبال الطلبات وإدارتها باحترافية." data-en="Fill in these simple steps, and your store link will be ready to share immediately to manage orders professionally.">املأ هذه الخطوات البسيطة، وسيكون رابط متجرك جاهزاً لمشاركته فوراً واستقبال الطلبات وإدارتها باحترافية.</p>
+  </div>
+</header>
+
+<!-- حاوية النموذج والمعاينة المباشرة -->
+<main class="create-container" id="mainContainer">
+
+  <!-- لوحة النموذج (Multi-step Form Panel) -->
+  <section class="form-panel" aria-labelledby="formMainTitle">
+    
+    <!-- مؤشر الخطوات -->
+    <div class="steps-nav" role="tablist">
+      <button type="button" class="step-tab active" id="tabStep1" onclick="goToStep(1)">
+        <span class="step-num">1</span>
+        <span data-ar="حساب التاجر" data-en="Merchant Info">حساب التاجر</span>
+      </button>
+      <button type="button" class="step-tab" id="tabStep2" onclick="goToStep(2)">
+        <span class="step-num">2</span>
+        <span data-ar="هوية المتجر" data-en="Store Identity">هوية المتجر</span>
+      </button>
+      <button type="button" class="step-tab" id="tabStep3" onclick="goToStep(3)">
+        <span class="step-num">3</span>
+        <span data-ar="الطلبات والشحن" data-en="Orders & Shipping">الطلبات والشحن</span>
+      </button>
+    </div>
+
+    <!-- نموذج إنشاء المتجر -->
+    <form id="createStoreForm" novalidate autocomplete="on">
+
+      <!-- ==================== الخطوة 1: بيانات التاجر الأساسية ==================== -->
+      <div class="step-content active" id="step1">
+        <div class="step-header">
+          <h2 id="formMainTitle">
+            <svg class="ic" style="color:var(--brand)"><use href="#g-user"/></svg>
+            <span data-ar="البيانات الأساسية لمالك المتجر" data-en="Store Owner Basic Info">البيانات الأساسية لمالك المتجر</span>
+          </h2>
+          <p data-ar="بيانات الدخول للوحة التحكم لإدارة منتجاتك وأرباحك." data-en="Your login credentials for the dashboard to manage products & profits.">بيانات الدخول للوحة التحكم لإدارة منتجاتك وأرباحك.</p>
+        </div>
+
+        <div class="f-grid">
+          <!-- اسم التاجر -->
+          <div class="field col-full" id="groupOwnerName">
+            <label for="ownerName">
+              <span data-ar="اسمك بالكامل (التاجر)" data-en="Your Full Name">اسمك بالكامل (التاجر)</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-user"/></svg>
+              <input type="text" id="ownerName" autocomplete="name" placeholder="مثال: أحمد محمد" data-ph-ar="مثال: أحمد محمد" data-ph-en="e.g. Ahmed Mohamed" required>
+            </div>
+            <div class="field-err-msg" id="errOwnerName">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="يرجى إدخال اسمك بالكامل (حرفين على الأقل)" data-en="Please enter your full name (at least 2 characters)">يرجى إدخال اسمك بالكامل (حرفين على الأقل)</span>
+            </div>
+          </div>
+
+          <!-- البريد الإلكتروني -->
+          <div class="field" id="groupOwnerEmail">
+            <label for="ownerEmail">
+              <span data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-mail"/></svg>
+              <input type="email" id="ownerEmail" autocomplete="email" dir="ltr" placeholder="name@example.com" data-ph-ar="name@example.com" data-ph-en="name@example.com" required>
+            </div>
+            <div class="field-err-msg" id="errOwnerEmail">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="يرجى كتابة بريد إلكتروني صالح" data-en="Please enter a valid email address">يرجى كتابة بريد إلكتروني صالح</span>
+            </div>
+          </div>
+
+          <!-- كلمة المرور -->
+          <div class="field" id="groupOwnerPassword">
+            <label for="ownerPassword">
+              <span data-ar="كلمة المرور للحساب" data-en="Account Password">كلمة المرور للحساب</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-lock"/></svg>
+              <input type="password" id="ownerPassword" autocomplete="new-password" placeholder="••••••••" required>
+            </div>
+            <div class="field-err-msg" id="errOwnerPassword">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="كلمة المرور يجب ألا تقل عن 6 أحرف" data-en="Password must be at least 6 characters">كلمة المرور يجب ألا تقل عن 6 أحرف</span>
+            </div>
+          </div>
+
+          <!-- رقم الموبايل الشخصي -->
+          <div class="field col-full" id="groupOwnerPhone">
+            <label for="ownerPhone">
+              <span data-ar="رقم موبايل التاجر" data-en="Owner Mobile Number">رقم موبايل التاجر</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-phone"/></svg>
+              <input type="tel" id="ownerPhone" autocomplete="tel" dir="ltr" placeholder="01012345678" data-ph-ar="01012345678 أو مع كود الدولة" data-ph-en="+20 101 234 5678" required>
+            </div>
+            <div class="field-err-msg" id="errOwnerPhone">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="يرجى إدخال رقم هاتف صحيح (8 أرقام على الأقل)" data-en="Please enter a valid phone number (8+ digits)">يرجى إدخال رقم هاتف صحيح (8 أرقام على الأقل)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps-actions">
+          <button type="button" class="btn-step-next" onclick="validateAndGoStep(2)">
+            <span data-ar="التالي: هوية المتجر" data-en="Next: Store Identity">التالي: هوية المتجر</span>
+            <svg class="ic"><use href="#g-arrow-left"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== الخطوة 2: هوية المتجر ورابطه ==================== -->
+      <div class="step-content" id="step2">
+        <div class="step-header">
+          <h2>
+            <svg class="ic" style="color:var(--brand)"><use href="#g-store"/></svg>
+            <span data-ar="هوية المتجر ومظهره" data-en="Store Brand & Look">هوية المتجر ومظهره</span>
+          </h2>
+          <p data-ar="اختر اسم علامتك التجارية والرابط المخصص الذي ستنشره لعملائك." data-en="Choose your brand name and the customized link for your customers.">اختر اسم علامتك التجارية والرابط المخصص الذي ستنشره لعملائك.</p>
+        </div>
+
+        <div class="f-grid">
+          <!-- اسم المتجر -->
+          <div class="field col-full" id="groupStoreName">
+            <label for="storeName">
+              <span data-ar="اسم المتجر / البراند" data-en="Store / Brand Name">اسم المتجر / البراند</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-store"/></svg>
+              <input type="text" id="storeName" maxlength="40" placeholder="مثال: متجر نور للأزياء" data-ph-ar="مثال: متجر نور للأزياء" data-ph-en="e.g. Nour Fashion Store" required>
+            </div>
+            <div class="field-err-msg" id="errStoreName">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="اسم المتجر من حرفين إلى 40 حرفاً" data-en="Store name must be 2 to 40 characters">اسم المتجر من حرفين إلى 40 حرفاً</span>
+            </div>
+          </div>
+
+          <!-- رابط المتجر (Slug) -->
+          <div class="field col-full" id="groupStoreSlug">
+            <label for="storeSlug">
+              <span data-ar="رابط المتجر المباشر (Store URL)" data-en="Store Direct URL">رابط المتجر المباشر (Store URL)</span>
+              <span class="req">*</span>
+            </label>
+            <div class="slug-wrap">
+              <span class="slug-domain">store.html?s=</span>
+              <input type="text" id="storeSlug" maxlength="30" placeholder="nour-store" autocapitalize="none" autocomplete="off" spellcheck="false" required>
+            </div>
+            <div class="field-hint" id="slugHintText" data-ar="أحرف إنجليزية صغيرة وأرقام وشرطة (-). مثال: nour-store" data-en="Lowercase English letters, numbers and hyphens (-). e.g. nour-store">أحرف إنجليزية صغيرة وأرقام وشرطة (-). مثال: nour-store</div>
+            <div class="field-err-msg" id="errStoreSlug">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="الرابط غير صالح (3-30 حرف إنجليزي أو رقم أو شرطة)" data-en="Invalid link (3-30 lowercase characters, numbers or hyphens)">الرابط غير صالح (3-30 حرف إنجليزي أو رقم أو شرطة)</span>
+            </div>
+          </div>
+
+          <!-- وصف المتجر أو الشعار اللفظي -->
+          <div class="field col-full">
+            <label for="storeTagline">
+              <span data-ar="وصف قصير أو شعار البراند (اختياري)" data-en="Short Tagline (Optional)">وصف قصير أو شعار البراند (اختياري)</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-tag"/></svg>
+              <input type="text" id="storeTagline" maxlength="80" placeholder="مثال: أحدث صيحات الموضة العصرية بأفضل الأسعار" data-ph-ar="مثال: أحدث صيحات الموضة العصرية بأفضل الأسعار" data-ph-en="e.g. Trendy fashion at the best prices">
+            </div>
+          </div>
+
+          <!-- رفع اللوجو -->
+          <div class="field">
+            <label>
+              <span data-ar="شعار المتجر (اللوجو)" data-en="Store Logo">شعار المتجر (اللوجو)</span>
+            </label>
+            <div class="upload-row">
+              <div class="upload-thumb" id="previewLogoThumb">D</div>
+              <input type="file" id="logoFileInput" class="file-input-hidden" accept="image/*">
+              <label for="logoFileInput" class="btn-upload-file">
+                <svg class="ic"><use href="#g-image"/></svg>
+                <span data-ar="اختيار لوجو" data-en="Choose Logo">اختيار لوجو</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- رفع صورة الغلاف -->
+          <div class="field">
+            <label>
+              <span data-ar="صورة غلاف المتجر" data-en="Store Cover Image">صورة غلاف المتجر</span>
+            </label>
+            <div class="upload-row">
+              <div class="upload-thumb cover-thumb" id="previewCoverThumb"></div>
+              <input type="file" id="coverFileInput" class="file-input-hidden" accept="image/*">
+              <label for="coverFileInput" class="btn-upload-file">
+                <svg class="ic"><use href="#g-image"/></svg>
+                <span data-ar="اختيار غلاف" data-en="Choose Cover">اختيار غلاف</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps-actions">
+          <button type="button" class="btn-step-prev" onclick="goToStep(1)">
+            <svg class="ic"><use href="#g-arrow-right"/></svg>
+            <span data-ar="السابق" data-en="Previous">السابق</span>
+          </button>
+          <button type="button" class="btn-step-next" onclick="validateAndGoStep(3)">
+            <span data-ar="التالي: الطلبات والشحن" data-en="Next: Orders & Shipping">التالي: الطلبات والشحن</span>
+            <svg class="ic"><use href="#g-arrow-left"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== الخطوة 3: الطلبات والشحن ==================== -->
+      <div class="step-content" id="step3">
+        <div class="step-header">
+          <h2>
+            <svg class="ic" style="color:var(--brand)"><use href="#g-truck"/></svg>
+            <span data-ar="إعدادات الطلبات والشحن" data-en="Orders & Shipping Settings">إعدادات الطلبات والشحن</span>
+          </h2>
+          <p data-ar="حدد العملة المناسبة وتكلفة الشحن ورقم الواتساب الذي ستستقبل عليه أوردرات عملائك." data-en="Set your preferred currency, delivery fee, and WhatsApp number for orders.">حدد العملة المناسبة وتكلفة الشحن ورقم الواتساب الذي ستستقبل عليه أوردرات عملائك.</p>
+        </div>
+
+        <div class="f-grid">
+          <!-- العملة -->
+          <div class="field">
+            <label for="storeCurrency">
+              <span data-ar="العملة الرسمية" data-en="Store Currency">العملة الرسمية</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-coins"/></svg>
+              <select id="storeCurrency">
+                <option value="EGP" data-ar="جنيه مصري (EGP)" data-en="Egyptian Pound (EGP)">جنيه مصري (EGP)</option>
+                <option value="SAR" data-ar="ريال سعودي (SAR)" data-en="Saudi Riyal (SAR)">ريال سعودي (SAR)</option>
+                <option value="AED" data-ar="درهم إماراتي (AED)" data-en="UAE Dirham (AED)">درهم إماراتي (AED)</option>
+                <option value="KWD" data-ar="دينار كويتي (KWD)" data-en="Kuwaiti Dinar (KWD)">دينار كويتي (KWD)</option>
+                <option value="QAR" data-ar="ريال قطري (QAR)" data-en="Qatari Riyal (QAR)">ريال قطري (QAR)</option>
+                <option value="BHD" data-ar="دينار بحريني (BHD)" data-en="Bahraini Dinar (BHD)">دينار بحريني (BHD)</option>
+                <option value="OMR" data-ar="ريال عماني (OMR)" data-en="Omani Rial (OMR)">ريال عماني (OMR)</option>
+                <option value="JOD" data-ar="دينار أردني (JOD)" data-en="Jordanian Dinar (JOD)">دينار أردني (JOD)</option>
+                <option value="IQD" data-ar="دينار عراقي (IQD)" data-en="Iraqi Dinar (IQD)">دينار عراقي (IQD)</option>
+                <option value="MAD" data-ar="درهم مغربي (MAD)" data-en="Moroccan Dirham (MAD)">درهم مغربي (MAD)</option>
+                <option value="USD" data-ar="دولار أمريكي (USD)" data-en="US Dollar (USD)">دولار أمريكي (USD)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- تكلفة الشحن الافتراضية -->
+          <div class="field" id="groupShipping">
+            <label for="storeShipping">
+              <span data-ar="تكلفة الشحن الثابتة" data-en="Standard Shipping Fee">تكلفة الشحن الثابتة</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-truck"/></svg>
+              <input type="number" id="storeShipping" min="0" max="1000" step="1" value="50">
+            </div>
+            <div class="field-err-msg" id="errShipping">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="تكلفة الشحن يجب أن تكون رقماً من 0 إلى 1000" data-en="Shipping fee must be between 0 and 1000">تكلفة الشحن يجب أن تكون رقماً من 0 إلى 1000</span>
+            </div>
+          </div>
+
+          <!-- رقم الواتساب لاستقبال الأوردرات -->
+          <div class="field col-full" id="groupStoreWa">
+            <label for="storeWa">
+              <span data-ar="رقم الواتساب لاستقبال الطلبات الفورية" data-en="WhatsApp for Instant Orders">رقم الواتساب لاستقبال الطلبات الفورية</span>
+              <span class="req">*</span>
+            </label>
+            <div class="input-box">
+              <svg class="field-ic"><use href="#g-wa"/></svg>
+              <input type="tel" id="storeWa" autocomplete="tel" dir="ltr" placeholder="01012345678 أو 966501234567" data-ph-ar="01012345678 أو مع كود الدولة" data-ph-en="+20 101 234 5678" required>
+            </div>
+            <div class="field-hint" data-ar="ستصلك تفاصيل كل أوردر جديد فوراً على هذا الرقم في رسالة واتساب منسقة." data-en="All incoming order details will arrive instantly on this number via WhatsApp.">ستصلك تفاصيل كل أوردر جديد فوراً على هذا الرقم في رسالة واتساب منسقة.</div>
+            <div class="field-err-msg" id="errStoreWa">
+              <svg class="ic" style="width:13px;height:13px"><use href="#g-alert"/></svg>
+              <span data-ar="يرجى كتابة رقم واتساب صحيح (8 أرقام على الأقل مع كود الدولة إن كنت خارج مصر)" data-en="Please enter a valid WhatsApp number (8+ digits)">يرجى كتابة رقم واتساب صحيح (8 أرقام على الأقل مع كود الدولة إن كنت خارج مصر)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps-actions">
+          <button type="button" class="btn-step-prev" onclick="goToStep(2)">
+            <svg class="ic"><use href="#g-arrow-right"/></svg>
+            <span data-ar="السابق" data-en="Previous">السابق</span>
+          </button>
+          <button type="submit" class="btn-step-submit" id="btnSubmitStore">
+            <span class="btn-text-content">
+              <span data-ar="إنشاء متجري وتجهيزه الآن 🎉" data-en="Create My Store Now 🎉">إنشاء متجري وتجهيزه الآن 🎉</span>
+              <svg class="ic" style="margin-inline-start:4px"><use href="#g-sparkles"/></svg>
+            </span>
+            <span class="btn-spinner"></span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- المعاينة الحية المباشرة (Sticky Live Preview) -->
+  <aside class="preview-col" aria-label="Live Store Preview">
+    <div class="live-preview-card">
+      <div class="pv-header">
+        <span data-ar="معاينة حية للمتجر" data-en="Live Store Preview">معاينة حية للمتجر</span>
+        <div class="pv-badge"><span></span> <strong data-ar="تحديث فوري" data-en="Live Sync">تحديث فوري</strong></div>
+      </div>
+      <div class="pv-banner" id="livePvBanner"></div>
+      <div class="pv-content">
+        <div class="pv-avatar" id="livePvAvatar">D</div>
+        <h3 class="pv-title" id="livePvTitle" data-ar="متجر نور (مثال)" data-en="Nour Store (Sample)">متجر نور (مثال)</h3>
+        <p class="pv-sub" id="livePvSub" data-ar="أزياء عصرية بأسعار حقيقية" data-en="Modern fashion at real prices">أزياء عصرية بأسعار حقيقية</p>
+        
+        <div class="pv-product-sample">
+          <div class="pv-product-img">👗</div>
+          <div class="pv-product-info">
+            <b data-ar="فستان كاجوال صيفي" data-en="Summer Casual Dress">فستان كاجوال صيفي</b>
+            <span id="livePvPrice">350 ج.م</span>
+          </div>
+        </div>
+
+        <div class="pv-order-btn" data-ar="اطلب عبر واتساب 👈" data-en="Order via WhatsApp 👈">اطلب عبر واتساب 👈</div>
+      </div>
+    </div>
+  </aside>
+
+</main>
+
+<!-- ==================== نافذة التوثيق الإلزامية لحساب التاجر (Mandatory Auth Gate) ==================== -->
+<div class="gate-modal-overlay" id="authGateModal">
+  <div class="gate-modal-card" role="dialog" aria-modal="true" aria-labelledby="gateModalTitle">
+    <div class="gate-card-header">
+      <div style="background:var(--ink);padding:10px 18px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px">
+        <img src="Daghta_ar_white.png" alt="Daghta" style="height:70px;width:auto;object-fit:contain;display:block;margin:0 auto 4px;">
+      </div>
+      <h3 id="gateModalTitle">توثيق حساب التاجر إجباري لحفظ المتجر</h3>
+      <p id="gateModalSub">لحماية ملكية متجرك وربطه رسمياً بهويتك وبريدك الإلكتروني، يجب تسجيل الدخول أو إنشاء حساب تاجر في منصة ضغطة قبل إنشاء الوثيقة في السحابة.</p>
+    </div>
+
+    <!-- رسائل الأخطاء والتنبيهات -->
+    <div class="gate-alert" id="gateAuthAlert"></div>
+
+    <!-- أزرار التبديل بين إنشاء حساب وتسجيل الدخول -->
+    <div class="gate-tabs-switch">
+      <button type="button" class="gate-tab-btn active" id="tabGateRegister" onclick="switchGateTab('register')">
+        إنشاء حساب تاجر جديد
+      </button>
+      <button type="button" class="gate-tab-btn" id="tabGateLogin" onclick="switchGateTab('login')">
+        تسجيل الدخول
+      </button>
+    </div>
+
+    <!-- نموذج إنشاء الحساب -->
+    <form id="gateRegisterForm" class="gate-form active" onsubmit="handleGateRegister(event)">
+      <div class="gate-input-group">
+        <label for="gateRegName">اسم التاجر</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-user"/></svg>
+          <input type="text" id="gateRegName" required placeholder="مثال: أحمد محمد">
+        </div>
+      </div>
+
+      <div class="gate-input-group">
+        <label for="gateRegEmail">البريد الإلكتروني للتاجر</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-mail"/></svg>
+          <input type="email" id="gateRegEmail" dir="ltr" required placeholder="name@example.com">
+        </div>
+      </div>
+
+      <div class="gate-input-group">
+        <label for="gateRegPhone">رقم هاتف التاجر</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-phone"/></svg>
+          <input type="tel" id="gateRegPhone" dir="ltr" required placeholder="01012345678">
+        </div>
+      </div>
+
+      <div class="gate-input-group">
+        <label for="gateRegPass">كلمة المرور (6 أحرف على الأقل)</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-lock"/></svg>
+          <input type="password" id="gateRegPass" minlength="6" required placeholder="••••••••">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-gate-submit" id="btnGateRegisterSubmit">
+        <span class="btn-text">توثيق الحساب وإنشاء المتجر رسمياً 🚀</span>
+        <span class="btn-spinner"></span>
+      </button>
+    </form>
+
+    <!-- نموذج تسجيل الدخول -->
+    <form id="gateLoginForm" class="gate-form" style="display:none" onsubmit="handleGateLogin(event)">
+      <div class="gate-input-group">
+        <label for="gateLoginEmail">البريد الإلكتروني</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-mail"/></svg>
+          <input type="email" id="gateLoginEmail" dir="ltr" required placeholder="name@example.com">
+        </div>
+      </div>
+
+      <div class="gate-input-group">
+        <label for="gateLoginPass">كلمة المرور</label>
+        <div class="gate-input-box">
+          <svg class="field-ic"><use href="#g-lock"/></svg>
+          <input type="password" id="gateLoginPass" required placeholder="••••••••">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-gate-submit" id="btnGateLoginSubmit">
+        <span class="btn-text">تسجيل الدخول وحفظ المتجر 🔐</span>
+        <span class="btn-spinner"></span>
+      </button>
+    </form>
+
+    <div class="gate-divider"><span>أو</span></div>
+
+    <!-- زر Google Auth -->
+    <button type="button" class="btn-gate-google" id="btnGateGoogle" onclick="handleGateGoogleAuth()">
+      <svg viewBox="0 0 24 24" class="google-svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+      <span>المتابعة والتوثيق بواسطة حساب Google</span>
+    </button>
+
+    <div class="gate-cancel-box">
+      <button type="button" class="btn-gate-cancel" onclick="closeAuthGateModal()">
+        ← العودة لتعديل بيانات المتجر
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== شاشة النجاح والانتظار التفاعلية (Done Screen) ==================== -->
+<section class="done-container" id="doneSection">
+  <div class="done-icon-box pending-wait-icon">
+    <span class="wait-icon-symbol">⏳</span>
+  </div>
+  <div class="status-badge-pending">
+    <span class="status-dot-pulse"></span>
+    <span>الحالة الافتراضية: قيد المراجعة والتدقيق الفني (Pending)</span>
+  </div>
+  <h2 data-ar="تم استلام طلب متجرك بنجاح ⏳" data-en="Store Application Received Successfully ⏳">تم استلام طلب متجرك بنجاح ⏳</h2>
+  <p class="done-lead-msg" data-ar="طلبك قيد المراجعة حالياً من فريق الجودة لضمان أعلى معايير الجودة ومطابقة المنتجات. سيتم مراجعة الطلب وتفعيل المتجر بالكامل خلال 24 ساعة." data-en="Your store is under quality review. It will be fully reviewed and activated within 24 hours.">طلبك قيد المراجعة حالياً من فريق الجودة لضمان أعلى معايير الجودة ومطابقة المنتجات. سيتم مراجعة الطلب وتفعيل المتجر بالكامل خلال 24 ساعة.</p>
+  
+  <!-- إشعار التجربة المجانية 60 يوماً -->
+  <div class="trial-promo-card">
+    <div class="trial-promo-icon">🎁</div>
+    <div class="trial-promo-text">
+      <strong>تم تفعيل التجربة المجانية لمدة 60 يوماً لحسابك!</strong>
+      <p>يمكنك الآن الدخول إلى لوحة التحكم، إضافة منتجاتك، وتخصيص متجرك بالكامل بينما تتم مراجعة الحساب وتفعيله.</p>
+    </div>
+  </div>
+
+  <!-- تنبيه بشأن رابط المتجر للزوار -->
+  <div class="public-preview-alert">
+    <span>ℹ️</span>
+    <p>تنبيه: صفحة متجرك العامة تظهر للزوار حالياً كـ <strong>"المتجر قيد التجهيز والمراجعة"</strong> حتى اكتمال التفعيل الرسمي.</p>
+  </div>
+
+  <div class="done-link-box">
+    <code id="doneStoreUrl">store.html?s=nour-store</code>
+    <button type="button" class="btn-copy-code" id="btnCopyDoneLink">
+      <svg class="ic"><use href="#g-copy"/></svg>
+      <span id="copyLinkTxt" data-ar="نسخ الرابط" data-en="Copy Link">نسخ الرابط</span>
+    </button>
+  </div>
+
+  <div class="redirect-bar">
+    <div>
+      <span data-ar="جاري نقلك إلى لوحة التحكم خلال " data-en="Redirecting to dashboard in ">جاري نقلك إلى لوحة التحكم خلال </span>
+      <span id="countdownSec">5</span> <span data-ar="ثوانٍ..." data-en="seconds...">ثوانٍ...</span>
+    </div>
+    <div class="redirect-progress" style="width:140px">
+      <div class="redirect-progress-inner" id="redirectProgress"></div>
+    </div>
+  </div>
+
+  <div class="done-actions-row">
+    <a href="dashboard.html" class="btn-dash-now" id="btnGoDashboard" data-ar="الانتقال إلى لوحة التحكم الآن 🚀" data-en="Go to Dashboard Now 🚀">الانتقال إلى لوحة التحكم الآن 🚀</a>
+    <a href="#" class="btn-view-store" id="btnOpenStore" target="_blank" data-ar="معاينة صفحة المتجر 👁️" data-en="View Store 👁️">معاينة صفحة المتجر 👁️</a>
+  </div>
+</section>
+
+<!-- الفوتر الموحد لجميع صفحات الموقع -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link">
+        <img src="Daghta_ar_white.png" class="footer-logo" alt="Daghta" data-ar-logo="Daghta_ar_white.png" data-en-logo="Daghta_logo_en.png">
+      </a>
+      <span data-ar="منصة ضغطة لإنشاء المتاجر الفورية © 2026" data-en="Daghta Platform for Instant Stores © 2026">منصة ضغطة لإنشاء المتاجر الفورية © 2026</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+      <li><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+      <li><a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a></li>
+      <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- منطق اللغة والملاحة -->
+<script>
+(function() {
+  'use strict';
+
+  var params = new URLSearchParams(window.location.search);
+  var saved = null;
+  try { saved = localStorage.getItem('daghtaLang'); } catch (e) {}
+  var langParam = params.get('lang');
+  window.LANG = (langParam === 'en' || langParam === 'ar') ? langParam : (saved === 'en' ? 'en' : 'ar');
+
+  window.setLanguage = function(lang) {
+    window.LANG = lang;
+    try { localStorage.setItem('daghtaLang', lang); } catch (e) {}
+
+    var doc = document;
+    var root = doc.documentElement;
+    root.lang = lang;
+    root.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    doc.querySelectorAll('[data-ar]').forEach(function(el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val !== null) el.textContent = val;
+    });
+
+    doc.querySelectorAll('[data-ph-ar]').forEach(function(el) {
+      var ph = el.getAttribute('data-ph-' + lang);
+      if (ph !== null) el.placeholder = ph;
+    });
+
+    doc.querySelectorAll('[data-ar-logo]').forEach(function(el) {
+      var logoSrc = el.getAttribute('data-' + lang + '-logo');
+      if (logoSrc) el.src = logoSrc;
+    });
+
+    var langText = doc.getElementById('langText');
+    if (langText) langText.textContent = (lang === 'ar') ? 'English' : 'العربية';
+
+    var pageTitle = doc.getElementById('pageTitle');
+    if (pageTitle) doc.title = pageTitle.getAttribute('data-' + lang) || doc.title;
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var langBtn = document.getElementById('langBtn');
+    if (langBtn) {
+      langBtn.addEventListener('click', function() {
+        if (window.LANG === 'ar') {
+          window.location.href = 'create_en.html';
+        } else {
+          window.setLanguage(window.LANG === 'ar' ? 'en' : 'ar');
+        }
+      });
+    }
+
+    var menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        var isOpen = document.body.classList.toggle('mobile-nav-open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    window.setLanguage(window.LANG);
+  });
+})();
+</script>
+
+<!-- منطق التحقق والخطوات وإنشاء المتجر وحفظ البيانات -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDmsyy5hZmES8q11bkJlmO9WZ5wght8Z04",
+  authDomain: "daghta-5ec61.firebaseapp.com",
+  projectId: "daghta-5ec61",
+  storageBucket: "daghta-5ec61.firebasestorage.app",
+  messagingSenderId: "496395341194",
+  appId: "1:496395341194:web:b00139eb31c40ca2f30c73",
+  measurementId: "G-ZPG9J6KBVW"
+};
+
+let db = null;
+let auth = null;
+try {
+  const app = initializeApp(firebaseConfig, 'create-app');
+  db = getFirestore(app);
+  auth = getAuth(app);
+} catch (err) {
+  console.warn("Firebase Init fallback:", err);
+}
+
+const $ = id => document.getElementById(id);
+const toEn = s => (s || '').replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).trim();
+
+// إدارة حالة تسجيل الدخول وتحديث عناصر النافبار وحقول الإدخال
+if (auth) {
+  onAuthStateChanged(auth, user => {
+    if (user && user.email && user.email.toLowerCase().trim() === 'mohamed.ramamda1989@gmail.com') {
+      window.location.replace('admin.html');
+      return;
+    }
+    const dashItem = $('navDashboardItem');
+    const storeItem = $('navStoreItem');
+    if (user) {
+      if (dashItem) dashItem.style.display = 'list-item';
+      if (storeItem) storeItem.style.display = 'list-item';
+      if (!$('ownerEmail').value && user.email) $('ownerEmail').value = user.email;
+      if (!$('ownerName').value && user.displayName) $('ownerName').value = user.displayName;
+    } else {
+      if (dashItem) dashItem.style.display = 'none';
+      if (storeItem) storeItem.style.display = 'none';
+    }
+  });
+}
+
+let currentStep = 1;
+
+window.goToStep = function(stepNum) {
+  if (stepNum < 1 || stepNum > 3) return;
+  currentStep = stepNum;
+
+  [1, 2, 3].forEach(n => {
+    const tab = $('tabStep' + n);
+    const content = $('step' + n);
+    if (!tab || !content) return;
+    
+    if (n === currentStep) {
+      tab.classList.add('active');
+      content.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+      content.classList.remove('active');
+    }
+    if (n < currentStep) {
+      tab.classList.add('completed');
+    } else {
+      tab.classList.remove('completed');
+    }
+  });
+
+  window.scrollTo({ top: $('mainContainer').offsetTop - 30, behavior: 'smooth' });
+};
+
+window.validateAndGoStep = function(targetStep) {
+  if (targetStep === 2) {
+    const name = $('ownerName').value.trim();
+    const email = $('ownerEmail').value.trim();
+    const pass = $('ownerPassword').value;
+    const phone = toEn($('ownerPhone').value).replace(/[\s\-\(\)]/g, '');
+
+    let err = false;
+    if (!name || name.length < 2) { setErr('groupOwnerName'); err = true; } else { clearErr('groupOwnerName'); }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('groupOwnerEmail'); err = true; } else { clearErr('groupOwnerEmail'); }
+    if (!pass || pass.length < 6) { setErr('groupOwnerPassword'); err = true; } else { clearErr('groupOwnerPassword'); }
+    if (!phone || !/^\+?[0-9]{8,15}$/.test(phone)) { setErr('groupOwnerPhone'); err = true; } else { clearErr('groupOwnerPhone'); }
+
+    if (err) return;
+  } else if (targetStep === 3) {
+    const storeName = $('storeName').value.trim();
+    const slug = $('storeSlug').value.trim();
+
+    let err = false;
+    if (!storeName || storeName.length < 2) { setErr('groupStoreName'); err = true; } else { clearErr('groupStoreName'); }
+    if (!slug || !/^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/.test(slug)) { setErr('groupStoreSlug'); err = true; } else { clearErr('groupStoreSlug'); }
+
+    if (err) return;
+  }
+
+  goToStep(targetStep);
+};
+
+function setErr(groupId) {
+  const g = $(groupId);
+  if (g) g.classList.add('has-err');
+}
+
+function clearErr(groupId) {
+  const g = $(groupId);
+  if (g) g.classList.remove('has-err');
+}
+
+['ownerName', 'ownerEmail', 'ownerPassword', 'ownerPhone', 'storeName', 'storeSlug', 'storeWa', 'storeShipping'].forEach(id => {
+  const inp = $(id);
+  if (!inp) return;
+  inp.addEventListener('input', () => {
+    const parent = inp.closest('.field');
+    if (parent) parent.classList.remove('has-err');
+  });
+});
+
+const slugInput = $('storeSlug');
+const nameInput = $('storeName');
+let slugTouched = false;
+
+function updatePreview() {
+  const name = nameInput.value.trim() || 'متجر نور (مثال)';
+  const tag = $('storeTagline').value.trim() || 'أزياء عصرية بأسعار حقيقية';
+  const cur = $('storeCurrency').value;
+
+  $('livePvTitle').textContent = name;
+  $('livePvSub').textContent = tag;
+  if (!uploadedLogoUrl) {
+    $('livePvAvatar').textContent = name.charAt(0).toUpperCase();
+    $('previewLogoThumb').textContent = name.charAt(0).toUpperCase();
+  }
+
+  const samplePrices = { EGP: '350 ج.م', SAR: '75 ر.س', AED: '70 د.إ', KWD: '6 د.ك', USD: '$25' };
+  $('livePvPrice').textContent = samplePrices[cur] || ('100 ' + cur);
+}
+
+nameInput.addEventListener('input', () => {
+  if (!slugTouched) {
+    const latinSlug = nameInput.value.toLowerCase().trim()
+      .normalize('NFKD')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 30);
+    slugInput.value = latinSlug || 'my-store';
+  }
+  updatePreview();
+});
+
+slugInput.addEventListener('input', () => {
+  slugTouched = true;
+  slugInput.value = slugInput.value.toLowerCase().replace(/[^a-z0-9-]/g, '');
+});
+
+$('storeTagline').addEventListener('input', updatePreview);
+$('storeCurrency').addEventListener('change', updatePreview);
+
+let uploadedLogoUrl = '';
+let uploadedCoverUrl = '';
+
+$('logoFileInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    uploadedLogoUrl = ev.target.result;
+    $('previewLogoThumb').style.backgroundImage = `url("${uploadedLogoUrl}")`;
+    $('previewLogoThumb').textContent = '';
+    $('livePvAvatar').style.backgroundImage = `url("${uploadedLogoUrl}")`;
+    $('livePvAvatar').textContent = '';
+  };
+  reader.readAsDataURL(file);
+});
+
+$('coverFileInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    uploadedCoverUrl = ev.target.result;
+    $('previewCoverThumb').style.backgroundImage = `url("${uploadedCoverUrl}")`;
+    $('livePvBanner').style.backgroundImage = `url("${uploadedCoverUrl}")`;
+  };
+  reader.readAsDataURL(file);
+});
+
+/* ==================== منطق بوابة التوثيق الإلزامية (Mandatory Auth Gate) ==================== */
+const authErrorMap = {
+  'auth/email-already-in-use': 'هذا البريد الإلكتروني مسجل بالفعل. يرجى التبديل لتبويب تسجيل الدخول.',
+  'auth/wrong-password': 'كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.',
+  'auth/invalid-credential': 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
+  'auth/user-not-found': 'لم يتم العثور على حساب بهذا البريد. يرجى إنشاء حساب جديد.',
+  'auth/weak-password': 'كلمة المرور ضعيفة جداً. يجب أن تتكون من 6 أحرف على الأقل.',
+  'auth/invalid-email': 'صيغة البريد الإلكتروني غير صالحة.',
+  'auth/popup-closed-by-user': 'تم إغلاق نافذة تسجيل الدخول بجوجل قبل الإكمال.',
+  'auth/network-request-failed': 'تعذر الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت.'
+};
+
+function showGateAlert(msg, type = 'err') {
+  const el = $('gateAuthAlert');
+  if (!el) return;
+  el.className = 'gate-alert ' + type;
+  el.textContent = msg;
+}
+
+function clearGateAlert() {
+  const el = $('gateAuthAlert');
+  if (el) {
+    el.className = 'gate-alert';
+    el.textContent = '';
+  }
+}
+
+window.switchGateTab = function(tabName) {
+  clearGateAlert();
+  const isReg = tabName === 'register';
+  $('tabGateRegister').classList.toggle('active', isReg);
+  $('tabGateLogin').classList.toggle('active', !isReg);
+  $('gateRegisterForm').style.display = isReg ? 'flex' : 'none';
+  $('gateLoginForm').style.display = !isReg ? 'flex' : 'none';
+};
+
+window.openAuthGateModal = function() {
+  clearGateAlert();
+  // نقل البيانات المدخلة في الخطوة 1 إلى نافذة التوثيق
+  const name = $('ownerName').value.trim();
+  const email = $('ownerEmail').value.trim();
+  const phone = $('ownerPhone').value.trim();
+  const pass = $('ownerPassword').value;
+
+  if (name) $('gateRegName').value = name;
+  if (email) {
+    $('gateRegEmail').value = email;
+    $('gateLoginEmail').value = email;
+  }
+  if (phone) $('gateRegPhone').value = phone;
+  if (pass) {
+    $('gateRegPass').value = pass;
+    $('gateLoginPass').value = pass;
+  }
+
+  switchGateTab('register');
+  $('authGateModal').classList.add('active');
+};
+
+window.closeAuthGateModal = function() {
+  $('authGateModal').classList.remove('active');
+  const btnSubmit = $('btnSubmitStore');
+  if (btnSubmit) btnSubmit.classList.remove('is-busy');
+};
+
+// إنشاء حساب تاجر في البوابة
+window.handleGateRegister = async function(e) {
+  e.preventDefault();
+  clearGateAlert();
+
+  const name = $('gateRegName').value.trim();
+  const email = $('gateRegEmail').value.trim();
+  const phone = $('gateRegPhone').value.trim();
+  const pass = $('gateRegPass').value;
+
+  if (!email || !pass || pass.length < 6) {
+    showGateAlert('يرجى التأكد من كتابة البريد وكلمة المرور (6 أحرف على الأقل).');
+    return;
+  }
+
+  const btn = $('btnGateRegisterSubmit');
+  btn.classList.add('busy');
+
+  try {
+    const cred = await createUserWithEmailAndPassword(auth, email, pass);
+    if (name) {
+      await updateProfile(cred.user, { displayName: name });
+    }
+    // تحديث بيانات النموذج الأصلية
+    $('ownerName').value = name;
+    $('ownerEmail').value = email;
+    $('ownerPhone').value = phone;
+
+    closeAuthGateModal();
+    await commitStoreCreation(cred.user);
+  } catch (err) {
+    console.warn("Auth register err:", err);
+    showGateAlert(authErrorMap[err.code] || ('حدث خطأ: ' + err.message));
+  } finally {
+    btn.classList.remove('busy');
+  }
+};
+
+// تسجيل الدخول لحساب قائم في البوابة
+window.handleGateLogin = async function(e) {
+  e.preventDefault();
+  clearGateAlert();
+
+  const email = $('gateLoginEmail').value.trim();
+  const pass = $('gateLoginPass').value;
+
+  if (!email || !pass) {
+    showGateAlert('يرجى إدخال البريد الإلكتروني وكلمة المرور.');
+    return;
+  }
+
+  const btn = $('btnGateLoginSubmit');
+  btn.classList.add('busy');
+
+  try {
+    const cred = await signInWithEmailAndPassword(auth, email, pass);
+    if (cred.user && cred.user.email && cred.user.email.toLowerCase().trim() === 'mohamed.ramamda1989@gmail.com') {
+      window.location.replace('admin.html');
+      return;
+    }
+    $('ownerEmail').value = cred.user.email;
+    if (cred.user.displayName) $('ownerName').value = cred.user.displayName;
+
+    closeAuthGateModal();
+    await commitStoreCreation(cred.user);
+  } catch (err) {
+    console.warn("Auth login err:", err);
+    showGateAlert(authErrorMap[err.code] || ('خطأ في تسجيل الدخول: ' + err.message));
+  } finally {
+    btn.classList.remove('busy');
+  }
+};
+
+// التوثيق بحساب Google في البوابة
+window.handleGateGoogleAuth = async function() {
+  clearGateAlert();
+  try {
+    const provider = new GoogleAuthProvider();
+    const cred = await signInWithPopup(auth, provider);
+    if (cred.user && cred.user.email && cred.user.email.toLowerCase().trim() === 'mohamed.ramamda1989@gmail.com') {
+      window.location.replace('admin.html');
+      return;
+    }
+    if (cred.user.displayName) $('ownerName').value = cred.user.displayName;
+    if (cred.user.email) $('ownerEmail').value = cred.user.email;
+
+    closeAuthGateModal();
+    await commitStoreCreation(cred.user);
+  } catch (err) {
+    if (err.code !== 'auth/popup-closed-by-user') {
+      showGateAlert(authErrorMap[err.code] || err.message);
+    }
+  }
+};
+
+/* ==================== معالجة إرسال النموذج الرئيسي وحفظ المتجر ==================== */
+const form = $('createStoreForm');
+const btnSubmit = $('btnSubmitStore');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const wa = toEn($('storeWa').value).replace(/[\s\-\(\)\+]/g, '');
+  const ship = parseFloat($('storeShipping').value) || 0;
+
+  let err = false;
+  if (!wa || wa.length < 8) { setErr('groupStoreWa'); err = true; } else { clearErr('groupStoreWa'); }
+  if (ship < 0 || ship > 1000) { setErr('groupShipping'); err = true; } else { clearErr('groupShipping'); }
+  if (err) return;
+
+  btnSubmit.classList.add('is-busy');
+
+  // التحقق الإجباري: منع حفظ أي متجر لزائر مجهول دون حساب موثق
+  const currentUser = auth ? auth.currentUser : null;
+  if (!currentUser) {
+    // إظهار النافذة المنبثقة الإجبارية للتسجيل أو الدخول
+    openAuthGateModal();
+    return;
+  }
+
+  // التاجر موثق ومسجل الدخول مسبقاً -> المتابعة فوراً للحفظ
+  await commitStoreCreation(currentUser);
+});
+
+// الدالة المسؤولة عن بناء وحفظ المتجر في Firestore و LocalStorage
+async function commitStoreCreation(user) {
+  btnSubmit.classList.add('is-busy');
+
+  const wa = toEn($('storeWa').value).replace(/[\s\-\(\)\+]/g, '');
+  const ship = parseFloat($('storeShipping').value) || 0;
+  const storeSlug = $('storeSlug').value.trim() || 'store-' + Math.floor(1000 + Math.random() * 9000);
+
+  // تفعيل التجربة المجانية لمدة 60 يوماً
+  const now = new Date();
+  const trialStart = now.toISOString();
+  const trialEndDate = new Date(now.getTime() + 60 * 24 * 60 * 60 * 1000);
+  const trialEnd = trialEndDate.toISOString();
+
+  const storeData = {
+    slug: storeSlug,
+    name: $('storeName').value.trim() || 'متجري الجديد',
+    tagline: $('storeTagline').value.trim() || '',
+    currency: $('storeCurrency').value || 'EGP',
+    shippingFee: ship,
+    whatsapp: wa,
+    ownerUid: user.uid,
+    ownerName: user.displayName || $('ownerName').value.trim() || 'تاجر ضغطة',
+    ownerEmail: user.email || $('ownerEmail').value.trim(),
+    ownerPhone: toEn($('ownerPhone').value).replace(/[\s\-\(\)]/g, ''),
+    logo: uploadedLogoUrl || '',
+    cover: uploadedCoverUrl || '',
+    status: 'pending', // حالة المتجر الافتراضية: قيد المراجعة والتدقيق
+    trial: {
+      startDate: trialStart,
+      endDate: trialEnd,
+      durationDays: 60,
+      isActive: true,
+      plan: 'free_trial_60'
+    },
+    trialStartDate: trialStart,
+    trialEndDate: trialEnd,
+    trialDays: 60,
+    createdAt: now.toISOString(),
+    updatedAt: now.toISOString()
+  };
+
+  try {
+    localStorage.setItem('daghta_current_store', JSON.stringify(storeData));
+    localStorage.setItem('daghta_store', JSON.stringify(storeData));
+    localStorage.setItem('daghta_user', JSON.stringify({
+      uid: user.uid,
+      name: storeData.ownerName,
+      email: storeData.ownerEmail,
+      phone: storeData.ownerPhone,
+      isLoggedIn: true
+    }));
+  } catch (lsErr) {
+    console.warn("LocalStorage save error:", lsErr);
+  }
+
+  if (db) {
+    try {
+      await setDoc(doc(db, 'stores', storeSlug), storeData);
+      console.log("Firestore store saved with pending status & 60-day trial:", storeSlug);
+    } catch (fbErr) {
+      console.warn("Firestore save deferred:", fbErr);
+    }
+  } else {
+    await new Promise(r => setTimeout(r, 600));
+  }
+
+  btnSubmit.classList.remove('is-busy');
+
+  // إخفاء النموذج وإظهار شاشة الانتظار والمراجعة
+  $('mainContainer').style.display = 'none';
+  const fullStoreUrl = 'store.html?s=' + encodeURIComponent(storeSlug);
+  $('doneStoreUrl').textContent = fullStoreUrl;
+  $('btnOpenStore').href = fullStoreUrl;
+  $('doneSection').style.display = 'block';
+
+  const progressEl = $('redirectProgress');
+  const countSec = $('countdownSec');
+  let secondsLeft = 5;
+
+  setTimeout(() => {
+    if (progressEl) progressEl.style.width = '100%';
+  }, 50);
+
+  const timer = setInterval(() => {
+    secondsLeft--;
+    if (countSec) countSec.textContent = secondsLeft;
+    if (secondsLeft <= 0) {
+      clearInterval(timer);
+      window.location.href = 'dashboard.html';
+    }
+  }, 1000);
+
+  $('btnGoDashboard').addEventListener('click', () => {
+    clearInterval(timer);
+  });
+}
+
+$('btnCopyDoneLink').addEventListener('click', async () => {
+  const url = $('doneStoreUrl').textContent;
+  const label = $('copyLinkTxt');
+  try {
+    await navigator.clipboard.writeText(url);
+    label.textContent = 'تم النسخ ✓';
+    setTimeout(() => { label.textContent = 'نسخ الرابط'; }, 2000);
+  } catch (e) {
+    label.textContent = 'تم النسخ ✓';
+  }
+});
+</script>
+
+</body>
+</html>
